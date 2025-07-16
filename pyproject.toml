@@ -8,4 +8,5 @@ dependencies = [
     "flask>=3.1.1",
     "grip>=4.6.2",
     "jsonify>=0.5",
+    "pyshacl>=0.30.1",
 ]

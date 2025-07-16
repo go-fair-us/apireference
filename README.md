@@ -180,13 +180,83 @@ Here we see both the request and response headers.  Note the "Content-Type: appl
 
 ### OpenAPI / SWAGGER
 
-Talk about swagger here and why a swagger document for your service would be useful. 
+The application [main.py](./server/main.py) is described by the OpenAPI document [localExample.yaml](descriptionDocs/localExample.yaml).   This provides a nice guide for those looking to implement an API to reference.  
+
+It is also possible to validate your swagger document with tools like 
+https://validator.swagger.io/.
+
 
 
 ### Optional Architectural Elements
 
-* robots.txt 
-* sitemap.xml (ala Google Dataset Search)
+There are some additional approaches 
+
+
+#### robots.txt
+
+OPTIONAL: Providers may decide to generate or modify their robots.txt file to provide guidance to the aggregators. The plan is to use the Gleaner software (gleaner.io) as well as some Python based notebooks and a few other approaches in this test.
+
+Gleaner uses an agent string of EarthCube_DataBot/1.0 and this can be used a robots.txt file to specify alternative sitemaps and guidance. This also allows a provider to provide guidance to Google and other potential indexers both for allow and disallow directives.
+
+
+```
+Sitemap: http://samples.earth/sitemap.xml
+
+User-agent: *
+Crawl-delay: 4
+Allow: /
+
+User-agent: Googlebot
+Disallow: /id
+
+User-agent: EarthCube_DataBot/1.0
+Allow: /
+Sitemap: https://example.org/sitemap.xml
+```
+
+#### sitemaps
+
+Providers will need to expose a set of resource landing pages using a sitemap.xml file. As noted above, providers can expose a sitemap file to just the target agent to avoid indexing test pages by commercial providers. You may wish to do this during testing or for other reasons. Otherwise, a sitemap.xml file exposed in general from somewhere in your site is perfectly fine.
+
+Information on the sitemap structure can be found at sitemaps.org.
+
+generic sitemap
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://example.org/landingpage1</loc>
+      <lastmod>2024-06-10</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>
+   <url>
+      <loc>https://example.org/landingpage2</loc>
+      <lastmod>2024-01-31</lastmod>
+      <changefreq>monthly</changefreq>
+   </url>  
+</urlset> 
+```
+
+It is encouraged to use the sitemap <lastmod> parameter to provide guidance to indexers on page updates. You can also add the <changefreq> parameter for how often you expect records in your sitemap to change this will tell systems like ODIS how often to reindex your holdings - possible values are: always, hourly, daily, weekly, monthly, yearly, never. Additionally, indexers may test ways to evaluate additions and removals from the sitemap URL set to manage new or removed resources.
+
+A sitemap file would look like the following.
+
+sitemap index
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+   <sitemap>
+      <loc>https://example.org/sitemap_a.xml</loc>
+      <lastmod>2024-06-10</lastmod>
+   </sitemap>
+   <sitemap>
+       <loc>https://example.org/sitemap_b.xml</loc>
+      <lastmod>2024-01-01</lastmod>
+   </sitemap>
+</sitemapindex>
+```
+
+
 
 
 ```mermaid
@@ -195,18 +265,30 @@ flowchart LR
     s["sitemaps.xml"]
     sw["swagger document"]
     cl["client"]
+    do["Provider Resource\n Digital Object Collection"]
+    api["API"]
 
-    r --> cl
-    s --> cl
-    sw --> cl
+    r <-- defines allowed locations and rate limits --> cl
+    r -- points to --> s
+    s <-- read to get resource list --> cl
+    api <-- described by --> sw
+    sw -- describes API service endpoint --> cl
+    do <-- exposed by --> api
+    api <-- accessed for resources by --> cl
 
     %% Define styling for boxes
     classDef boxStyle fill:#f9f9f9,stroke:#333,stroke-width:2px,rx:5,ry:5
+    %% Define styling for boxes
+    classDef docStyle fill:#90ee90,stroke:#333,stroke-width:2px,rx:5,ry:5
+
 
     %% Apply styling to all nodes
-    class r,s,sw,cl boxStyle
+    class r,s,sw,cl,do,api boxStyle
+    class r,s,sw docStyle
 
 ```
+In the above diagram we can see the documents discussed here (in green) that can be added to our server to provide guidance and efficiency to the process.  
+
 
 
 One advantage of this approach is that is a common pattern used by other aggregation services.  The largest among these is like the Google Dataset Search services.  If you establish a sitemap.xml referencing your resources, you can submit it to Google so that your resources are also indexed in their service.  
@@ -214,6 +296,11 @@ One advantage of this approach is that is a common pattern used by other aggrega
 ## Established Service Providing Communities
 
 For those with established API architectures, much of this is likely very basic.  
+
+### Response alignment
+
+Like approaches in FHIR, MLCommons Croissant and Google Dataset Search, 
+
 
 ## FHIR Interoperability
 
@@ -256,25 +343,32 @@ flowchart LR
     ss --> kg
     
     %% Define styling for boxes
-    classDef boxStyle fill:#f9f9f9,stroke:#333,stroke-width:2px,rx:5,ry:5
+    classDef boxStyle fill:#6a8154,stroke:#333,stroke-width:2px,rx:5,ry:5
     classDef kgStyle fill:#e6be8a,stroke:#333,stroke-width:2px,rx:5,ry:5
+    classDef srcStyle fill:#8AA6E6,stroke:#333,stroke-width:2px,rx:5,ry:5
+    classDef rdfStyle fill:#c17f54,stroke:#333,stroke-width:2px,rx:5,ry:5
+    classDef valStyle fill:#f8efe2,stroke:#333,stroke-width:2px,rx:5,ry:5
 
 
     %% Apply styling to all nodes
-    class bpr,fhr,jld,ttl,shx,shcl,ss boxStyle
+    class ss boxStyle
     class kg kgStyle
+    class bpr,fhr srcStyle
+    class jld,ttl rdfStyle
+    class shx,shcl valStyle
+
 ```
 
 Note that while it is easy to mix RDF graphs in a triplestore that doesn't mean that recovery across the various vocabularies (ontologies) is easily done in query space.  However, if an effort was taken on to map between them with something like [SSSOM](https://mapping-commons.github.io/sssom/) this could be addressed.  Such an approach is outside the scope of this document to address. 
 
 
-## Swagger Validation
-
-https://validator.swagger.io/ used on https://provisium.io/api/swagger.json
-
 ## SHACL Validation for Blueprint Profile
 
-The payload is JSON-LD so we will use PySHACL
+Since the response package is RDF in JSON-LD, we can leverage approaches like ShEx and SHACL to validate these data graphs with.  While FHIR uses ShEX, we have opted to use the W3C SHACL approach.  An example SHACL file can be seen in the shapegraphs directory.  The file [googleRequired.ttl](./shapegraphs/googleRequired.ttl) can be used to validate graphs with.
+
+This SHACL shape is designed to validate schema.org Dataset for only URL, name and description.  A popular and standard compliant implementation of SHACL is [pySHACL](https://github.com/RDFLib/pySHACL).
+
+Once installed, it will expose a command line tool that you can use like the following
 
 ```bash
 pyshacl -s googleRequired.ttl -sf turtle -df json-ld -f table ./data/1.json
@@ -284,12 +378,9 @@ pyshacl -s googleRequired.ttl -sf turtle -df json-ld -f table ./data/1.json
 pyshacl -s https://provisium.io/api/googleRequired.ttl -sf turtle -df json-ld -f table ./data/1.json
 ```
 
-## Future Directions 
+As a library, it is also possible to use it more programmatically to check resources in a triplestore, for example.  
 
-* MCP
-* croissant
 
-Review:  https://glama.ai/blog/2025-06-06-mcp-vs-api
+## Future Directions
 
-MCP?
-
+ MCP / croissant
