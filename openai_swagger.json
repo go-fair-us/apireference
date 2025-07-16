@@ -1,0 +1,48 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dataset API",
+    "version": "1.0.0",
+    "description": "A simple API to retrieve datasets as JSON-LD documents using schema.org vocabulary."
+  },
+  "servers": [
+    {
+      "url": "https://provisium.io/api"
+    }
+  ],
+  "paths": {
+    "/datasets/{ID1}": {
+      "get": {
+        "summary": "Retrieve a dataset by ID",
+        "description": "Returns a JSON-LD document representing the dataset using schema.org.",
+        "parameters": [
+          {
+            "name": "ID1",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The unique identifier for the dataset."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/ld+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Dataset not found"
+          }
+        }
+      }
+    }
+  }
+}

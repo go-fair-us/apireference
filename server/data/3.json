@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "identifier": "https://doi.org/10.1234/example-dataset",
+  "name": "Example Infectious Disease Research",
+  "description": "A sample dataset containing information on infectious agents, hosts, including measurements and health conditions over a specific temporal and spatial range.",
+  "dateCreated": "2023-01-15",
+  "creator": {
+    "@type": "Person",
+    "name": "Jane Researcher",
+    "identifier": "https://orcid.org/0000-0001-2345-6789"
+  },
+  "funder": {
+    "@type": "Organization",
+    "name": "National Health Fund",
+    "identifier": "https://ror.org/0123456789"
+  },
+  "funding": {
+    "@type": "Grant",
+    "identifier": "GRANT-XYZ-2023",
+    "funder": {
+      "@type": "Organization",
+      "identifier": "https://ror.org/0123456789"
+    }
+  },
+  "measurementTechnique": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C17048",
+  "distribution": {
+    "@type": "DataDownload",
+    "contentUrl": "https://example.com/dataset/download.zip",
+    "encodingFormat": "ZIP"
+  },
+  "citation": "https://doi.org/10.5678/related-publication",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "infectiousAgent",
+      "value": "https://www.ncbi.nlm.nih.gov/taxonomy/2697049"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "host",
+      "value": "https://www.ncbi.nlm.nih.gov/taxonomy/9606"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "healthCondition",
+      "value": "https://monarchinitiative.org/MONDO:0005090"
+    }
+  ],
+  "usageInfo": "https://example.com/conditions-of-access/open",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "United States",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    }
+  },
+  "temporalCoverage": "2020-01-01/2023-12-31"
+}

@@ -1,0 +1,79 @@
+{
+  "@id": "https://example.org/id/1234",
+  "@type": "Dataset",
+  "@context": "https://schema.org/",
+  "identifier": {
+    "@id": "https://doi.org/10.21430/M3KXJHSP4T",
+    "@type": "PropertyValue",
+    "propertyID": "https://registry.identifiers.org/registry/doi",
+    "value": "doi:10.21430/M3KXJHSP4T",
+    "url": "https://doi.org/10.21430/M3KXJHSP4T"
+  },
+  "name": "AMP Rheumatoid Arthritis Phase 1",
+  "description": "The primary goal for RA arthroplasty P1 studies are …",
+  "dateCreated": "07/25/2024",
+  "author": "John Doe",
+  "url": "https://immport.org/shared/study/SDY998",
+  "measurementTechnique": [
+    "RNA sequencing",
+    "CyTOF",
+    "Flow Cytometry",
+    "Microscopy"
+  ],
+  "citation": "J.Smith 'How I created an awesome dataset’, Journal of Data Science, 1966",
+  "funder": [
+    {
+      "@type": "Organization",
+      "url": "https://projectreporter.nih.gov/project_info_details.cfm?aid=9276480",
+      "name": "Accelerating Medicines Partnership RA/SLE (AMP RA/SLE)"
+    },
+    {
+      "@type": "Organization",
+      "alternateName": ["NIAID"],
+      "description": "ImmPort is funded by the NIH, NIAID and DAIT in support of the NIH mission to share data with the public.",
+      "name": "National Institute of Allergy & Infectious Diseases",
+      "parentOrganization": "National Institutes for Health",
+      "url": "https://immport.org"
+    }
+  ],
+  "keywords": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Rheumatoid Arthritis",
+      "inDefinedTermSet": "http://ncicb.nci.nih.gov",
+      "url": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2884"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "osteoarthritis",
+      "inDefinedTermSet": "http://ncicb.nci.nih.gov",
+      "url": "osteoarthritis"
+    }
+  ],
+  "distribution": [
+    {
+      "contentUrl": "https://browser.immport.org/browser?path=SDY998",
+      "@type": "DataDownload",
+      "encodingFormat": "URL"
+    }
+  ],
+  "conditionsOfAccess": "Open access under CC BY 4.0 license.",
+  "license": "https://www.immport.org/agreement",
+  "about": {
+    "@type": "MedicalStudy",
+    "healthCondition": {
+      "@type": "InfectiousDisease",
+      "name": "MONDO",
+      "infectiousAgent": "NCBITaxon"
+    }
+  },
+  "subjectOf": {
+    "@type": "Taxon",
+    "name": "NCBITaxon"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Global"
+  },
+  "temporalCoverage": "2020-01-01/2023-12-31"
+}

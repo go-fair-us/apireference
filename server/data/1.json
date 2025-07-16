@@ -1,0 +1,6 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Dataset",
+  "name": "Sample Dataset",
+  "description": "This is a sample dataset."
+}
