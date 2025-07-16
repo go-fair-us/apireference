@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Dataset API
+  description: A simple API that provides access to datasets stored as JSON files
+  version: 1.0.0
+  contact:
+    email: support@example.com
+servers:
+  - url: http://127.0.0.1:8080
+    description: Local development server
+paths:
+  /id/dataset/{id}:
+    get:
+      summary: Get a specific dataset by ID
+      description: Returns a specific dataset JSON file based on the provided ID
+      operationId: getDataset
+      parameters:
+        - name: id
+          in: path
+          description: ID of the dataset to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Dataset found and returned successfully
+          content:
+            application/ld+json:
+              schema:
+                type: object
+              example:
+                "@context": "http://schema.org"
+                "@type": "Dataset"
+                "name": "Sample Dataset"
+                "description": "This is a sample dataset."
+        '404':
+          description: Dataset not found
+  /id/index/datasets:
+    get:
+      summary: List all available datasets
+      description: Returns a list of URLs for all available datasets in the data directory
+      operationId: listDatasets
+      responses:
+        '200':
+          description: List of dataset URLs returned successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
+              example:
+                - "http://127.0.0.1:8080/id/dataset/1"
+                - "http://127.0.0.1:8080/id/dataset/2"
+components:
+  schemas:
+    Dataset:
+      type: object
+      properties:
+        "@context":
+          type: string
+          example: "http://schema.org"
+        "@type":
+          type: string
+          example: "Dataset"
+        name:
+          type: string
+          description: The name of the dataset
+        description:
+          type: string
+          description: A description of the dataset
+tags:
+  - name: Datasets
+    description: Operations related to datasets
