@@ -32,16 +32,14 @@ First, we will want some ability to expose a catalog of the resources we want to
 
 Let's establish a set of URL patterns for our implementation.
 
-```http request
+``` 
 /id/index/datasets
 /id/dataset/{id}
 ```
 
 Here we have used the prefix ```/id/``` simply to set this URL apart from the rest of our domain namespaces for URLs.   This is optional, and if you are using a top-level unique domain like api.example.org, then it wouldn't even be necessary.   For this document we will keep it. 
 
-Visually this is something like
-
-
+Visually this is something like:
 
 ```mermaid
 flowchart LR
@@ -69,10 +67,27 @@ This collection of digital objects might be a GitHub repository, S3 objects stor
 
 #### Example
 
-If we run the main.py program found in the server directory with 
+A simple Python program is provided to explore some of these commands locally if desired. This repo uses the [uv](https://docs.astral.sh/uv/) command to manage the Python environment.   You can 
+[install uv](https://docs.astral.sh/uv/getting-started/installation/) and then use the commands that follow in this document.
+
+Move to the _server_ directory and run:
 
 ```bash
 uv run main.py
+```
+
+you should see something like:
+
+```bash
+(.venv) ➜  server git:(master) ✗ uv run main.py                                
+Server listening on port 8080
+ * Serving Flask app 'main'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.202.58:8080
+Press CTRL+C to quit
 ```
 
 
@@ -80,7 +95,7 @@ uv run main.py
 
 We would use 
 
-```http request
+```
 /id/index/datasets
 ```
 
@@ -96,17 +111,30 @@ We can then see we can use a simple curl call like:
 Here the valid URLs are expressed with a localhost IP (127.0.0.1) so this will only work on your 
 local machine.  
 
-
+> Note: A simple list like shown above carries no semantics. Better would be to return either a 
+> sitemap XML document or a schema.org type DataCatalog document.
 
 #### GET resource
 
-This leaves us to implement
+This leaves us to implement the request for a document. We will work the http://127.0.0.1:8080/id/dataset/1 
+returned above.  At this point we are issuing a simple GET request for a resource that follows the pattern:
 
-```http request
+``` 
 /id/dataset/{id}
 ```
+as a means to get a dataset.   Note that there is nothing rigid about this approach. The URL path could vary, and you might be exposing URLs with various extensions or patterns used by your community already.  
 
-as a means to get a dataset.  
+So patterns like
+
+```http request
+/id/dataset/1
+/id/dataset/1.json
+/id/dataset/1?mode=jsonld
+```
+
+are all valid.
+
+An example curl here, which defaults to method GET, follows.
 
 ```bash
 ➜  apireference git:(master) ✗ curl http://192.168.202.58:8080/id/dataset/1     
