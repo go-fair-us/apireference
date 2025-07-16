@@ -28,7 +28,7 @@ As this Blueprint describes a read-only pattern, the only HTTP verb we will be d
 
 Given this, a minimum viable product (MVP) approach might look something like this.
 
-First, we will want some ability to expose a catalog of the resources we want to have indexed.  A more architectural approach to this will be shown shortly in the [Optional Architectural Elements](#optional-architectural-elements) section.  However, we could also do this as an API call.    
+First, we will want some ability to expose a catalog of the resources we want to have indexed.  A more architectural approach to this will be shown shortly in the [Additional Architectural Elements](#additional-architectural-elements) section.  However, we could also do this as an API call.    
 
 Let's establish a set of URL patterns for our implementation.
 
@@ -99,7 +99,7 @@ We would use
 /id/index/datasets
 ```
 
-to get a set of resources we wish to index.  Note; it is possible this could be quite large depending on how you, as an organization, have decided to expose your resources.  The __unit__ or __quantization__ of your resources might be quite fine or course depending on the use cases for your community.   If this set it large, it might be challenging for an API to dynamically respond to, and so you may wish to build this and provide it as a static pre-computed resource.  In that case you may want to use a sitemap as described in the following [Optional Architectural Elements](#optional-architectural-elements) section.
+to get a set of resources we wish to index.  Note; it is possible this could be quite large depending on how you, as an organization, have decided to expose your resources.  The __unit__ or __quantization__ of your resources might be quite fine or course depending on the use cases for your community.   If this set it large, it might be challenging for an API to dynamically respond to, and so you may wish to build this and provide it as a static pre-computed resource.  In that case you may want to use a sitemap as described in the following [Additional Architectural Elements](#additional-architectural-elements) section.
 
 We can then see we can use a simple curl call like:
 
@@ -126,7 +126,7 @@ as a means to get a dataset.   Note that there is nothing rigid about this appro
 
 So patterns like
 
-```http request
+``` 
 /id/dataset/1
 /id/dataset/1.json
 /id/dataset/1?mode=jsonld
@@ -187,7 +187,7 @@ https://validator.swagger.io/.
 
 
 
-### Optional Architectural Elements
+### Additional Architectural Elements
 
 There are some additional approaches 
 
@@ -299,7 +299,13 @@ For those with established API architectures, much of this is likely very basic.
 
 ### Response alignment
 
-Like approaches in FHIR, MLCommons Croissant and Google Dataset Search, 
+Like approaches in FHIR, MLCommons Croissant and Google Dataset Search, the Blueprint
+advocates a response that is application/ld+json leveraging the schema.org vocabulary.
+
+So, existing providers of APIs, to align, would need to:
+
+1) Provide some endpoint that is RESTful compliant and returns JSON-LD algined with the Blueprint schema. Note that we will generate and provide a SHACL shape that can be used to check this programmatically.  See the section [SHACL Validation for Blueprint Profile](#shacl-validation-for-blueprint-profile).
+2) Export a list of resources to be indexed.  Either as the result of an API call or via the sitemap approach.  See the sitemap section of the [Additional Architectural Elements](#additional-architectural-elements) section.  
 
 
 ## FHIR Interoperability
@@ -309,7 +315,7 @@ Those implementing the [H7 FHIR](https://www.hl7.org/fhir/) are already well ali
 The H7 FHIR specification has a [https://www.hl7.org/fhir/rdf.html](RDF based turtle encoding) option 
 as well as a [ShEx based validation document](https://www.hl7.org/fhir/fhir.shex).
 
-A comparison on the Blueprint approach and the RDF based FHIR approach is seen below.  (detail this, look at the FHIR API patterns and compare to the ones in the blueprint)
+A comparison on the Blueprint approach and the RDF-based FHIR approach is seen below.  (detail this, look at the FHIR API patterns and compare to the ones in the blueprint)
 
 ```mermaid
 flowchart LR
@@ -383,4 +389,5 @@ As a library, it is also possible to use it more programmatically to check resou
 
 ## Future Directions
 
- MCP / croissant
+I didn't get to this section, but topics like MCP and more about the briefly mentioned MLCommons Croissant work would likely be useful.  
+ 
