@@ -8,7 +8,7 @@ The goal is to provide a reference technical implementation for those interested
 
 ## Response Package
 
-Before we talk about APIs or document URLs, we will address the response package that will be returned.  The Blueprint presents an approach where the response package is modeled in RDF and encoding in JSON-LD. This is similar to the optional FHIR response pattern using RDF and Turtle referenced in the [FHIR Interoperabiliy](#fhir-interopability) section below. 
+Before we talk about APIs or document URLs, we will address the response package that will be returned.  The Blueprint presents an approach where the response package is modeled in RDF and encoding in JSON-LD. This is similar to the optional FHIR response pattern using RDF and Turtle referenced in the [FHIR Interoperability](#fhir-interoperability) section below. 
 
 Details of this encoding can be seen in the section __Supplemental Table 7. Example JSON-LD Encodings__ on page 23 of [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://docs.google.com/document/d/1y4Jzka6bcIZ_8yyxsJnOxGYrrRrqXv3n21sLJIZNUss/edit?tab=t.0#heading=h.3r4b53mh0wp9).
 
@@ -39,7 +39,7 @@ Let's establish a set of URL patterns for our implementation.
 
 Here we have used the prefix ```/id/``` simply to set this URL apart from the rest of our domain namespaces for URLs.   This is optional, and if you are using a top-level unique domain like api.example.org, then it wouldn't even be necessary.   For this document we will keep it. 
 
-Visually this is something like:
+Visually, this is something like:
 
 ```mermaid
 flowchart LR
@@ -53,7 +53,7 @@ flowchart LR
     r --> api
     api -- provides METHOD GET --> i
     api -- provides METHOD GET --> get
-    api -- described by --> sw
+    sw -- describes --> api
 
     %% Define styling for boxes
     classDef boxStyle fill:#f9f9f9,stroke:#333,stroke-width:2px,rx:5,ry:5
@@ -99,7 +99,7 @@ We would use
 /id/index/datasets
 ```
 
-to get a set of resources we wish to index.  Note; it is possible this could be quite large depending on how you, as an organization, have decided to expose your resources.  The __unit__ or __quantization__ of your resources might be quite fine or course depending on the use cases for your community.   If this set it large, it might be challenging for an API to dynamically respond to, and so you may wish to build this and provide it as a static pre-computed resource.  In that case you may want to use a sitemap as described in the following [Additional Architectural Elements](#additional-architectural-elements) section.
+To get a set of resources we wish to index. Note; it is possible this could be quite large depending on how you, as an organization, have decided to expose your resources.  The __unit__ or __quantization__ of your resources might be quite fine or course depending on the use cases for your community.   If this set it large, it might be challenging for an API to dynamically respond to, and so you may wish to build this and provide it as a static pre-computed resource.  In that case you may want to use a sitemap as described in the following [Additional Architectural Elements](#additional-architectural-elements) section.
 
 We can then see we can use a simple curl call like:
 
@@ -122,7 +122,7 @@ returned above.  At this point we are issuing a simple GET request for a resourc
 ``` 
 /id/dataset/{id}
 ```
-as a means to get a dataset.   Note that there is nothing rigid about this approach. The URL path could vary, and you might be exposing URLs with various extensions or patterns used by your community already.  
+As a means to get a dataset.   Note that there is nothing rigid about this approach. The URL path could vary, and you might be exposing URLs with various extensions or patterns used by your community already.  
 
 So patterns like
 
@@ -139,7 +139,7 @@ An example curl here, which defaults to method GET, follows.
 ```bash
 ➜  apireference git:(master) ✗ curl http://192.168.202.58:8080/id/dataset/1     
 {
-  "@context": "http://schema.org",
+  "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Sample Dataset",
   "description": "This is a sample dataset."
@@ -194,13 +194,12 @@ There are some additional approaches
 
 #### robots.txt
 
-OPTIONAL: Providers may decide to generate or modify their robots.txt file to provide guidance to the aggregators. The plan is to use the Gleaner software (gleaner.io) as well as some Python based notebooks and a few other approaches in this test.
+OPTIONAL: Providers may decide to generate or modify their robots.txt file to provide guidance to the aggregators. The plan is to use the Gleaner software (gleaner.io) as well as some Python-based notebooks and a few other approaches in this test.
 
-Gleaner uses an agent string of EarthCube_DataBot/1.0 and this can be used a robots.txt file to specify alternative sitemaps and guidance. This also allows a provider to provide guidance to Google and other potential indexers both for allow and disallow directives.
 
 
 ```
-Sitemap: http://samples.earth/sitemap.xml
+Sitemap: https://samples.earth/sitemap.xml
 
 User-agent: *
 Crawl-delay: 4
@@ -211,7 +210,7 @@ Disallow: /id
 
 User-agent: EarthCube_DataBot/1.0
 Allow: /
-Sitemap: https://example.org/sitemap.xml
+Sitemap: httpss://example.org/sitemap.xml
 ```
 
 #### sitemaps
@@ -312,7 +311,7 @@ So, existing providers of APIs, to align, would need to:
 
 Those implementing the [H7 FHIR](https://www.hl7.org/fhir/) are already well aligned to the blueprint.
 
-The H7 FHIR specification has a [https://www.hl7.org/fhir/rdf.html](RDF based turtle encoding) option 
+The H7 FHIR specification has a [RDF based turtle encoding](https://www.hl7.org/fhir/rdf.html) option 
 as well as a [ShEx based validation document](https://www.hl7.org/fhir/fhir.shex).
 
 A comparison on the Blueprint approach and the RDF-based FHIR approach is seen below.  (detail this, look at the FHIR API patterns and compare to the ones in the blueprint)
