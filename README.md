@@ -37,6 +37,10 @@ Examples of the JSON-LD encoding can be seen in:
 
 The minimal API specification in the NIAID Blueprint would significantly improve the NIAID data ecosystem as a robust, scalable method for sharing metadata about NIAID digital objects. For example, the API standard would facilitate the creation of metadata catalogs and resource graphs, enhance the NIAID Data Ecosystem Discovery Portal, and enable integration with other cataloging services and data-driven workflows. The result would be a more sustainable, transparent, and user-friendly data architecture, empowering researchers to leverage NIAID data more effectively.
 
+## Audience
+
+The API reference implementation is intended for developers and data managers who are interested in implementing the NIAID Blueprint recommendations.
+
 ## Approaches
 
 ### API Implementation

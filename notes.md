@@ -1,6 +1,14 @@
 # Errata
 
-## address later
+## Notes
+
+* Is this a training goal or a developer resourcce?
+  * If training is the specific goal, a landscape review or implementation approaches?
+* There is the issue of audience and the spectrum of capacity to support different approaches.  Some will want a simple almost file-based approach, while others will want a more traditional API service that accesses their more structure data store (relations, graph, etc.)
+
+
+
+## scratch pad
 
 * simple means to test APIs and report to a dashboard
 * simple means to run docker containers on a schedule
