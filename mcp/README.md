@@ -2,9 +2,9 @@
 
 ## What is it?
 
-The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is an open-standard, open-source framework designed to standardize how AI systems, particularly large language models (LLMs), connect with external tools, data sources, and systems. Sometimes refererd to as a "USB-C" for AI.
+The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is an open-standard, open-source framework designed to standardize how AI systems, particularly large language models (LLMs), connect with external tools, data sources, and systems. Sometimes referred to as a "USB-C" for AI.
 
-Note that MCP is not an API specification, it is a wire protocol, in this case JSON-RPC 2.0.   It can work locally via standard IO (stdio) or over http.
+Note that MCP is not an API specification, it is a wire protocol, in this case JSON-RPC 2.0. It can work locally via standard IO (stdio) or over http.
 
 ## Why not just use APIs (OpenAPI?)
 
@@ -14,17 +14,17 @@ Note that MCP is not an API specification, it is a wire protocol, in this case J
 
 Unlike static API specs, MCP enables agents to query capabilities dynamically, allowing automatic adaptation without new client code.
 
-MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are non-standard in APIs.
+MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs.
 
 ## How to try it
 
-There are several tools that are starting enable client connections to MCP servers.  Many deverloper IDEs like VS-code/Cline, Zed and IntelliJ software can be MCP clients and in some cases are MCP servers too.
+There are several tools that are starting to enable client connections to MCP servers.  Many developed IDEs like VS-code/Cline, Zed and IntelliJ software can be MCP clients and in some cases are MCP servers too.
 
-Also, tools like Gemini-CLI and Claude-Cli or web based tools like LibreChat can interact with MCP.   We will use Gemini-CLI and LibreChat here for our examples.
+Also, tools like Gemini-CLI and Claude-Cli or web-based tools like LibreChat can interact with MCP.   We will use Gemini-CLI and LibreChat here for our examples.
 
 ## Demo
 
-I coded up a simple MCP over one of the BVBRC APIs.   I know Kevin has set up an MCP too over an API.  Doing an API gateway with MCP is not the gold standard of MCP of course.   But it's quick and dirty and mostly what you see going on with this set.
+I coded up a simple MCP over one of the BVBRC APIs.   I know Kevin has set up an MCP too over an API.  Doing an API gateway with MCP is not the gold standard of MCP, of course.   But it's quick and dirty and mostly what you see going on with this set.
 
 it looks like:
 
@@ -57,12 +57,17 @@ That would be like
 * OpenGenes https://github.com/longevity-genie/opengenes-mcp
 * SynerAge https://github.com/longevity-genie/synergy-age-mcp
 
+* https://github.com/tnnandi/agentic_lab
+* https://sysbio-curie.github.io/Neko
+* https://maboss.curie.fr
+* https://physicell.org
+
 
 ## Demo
 
-> I'll convert this to a screen cast
+> I'll convert this to a screencast
 
-So I set up a couple MCP servers with Gemini-CLI.  One I coded up which is a simple one to expose a single BVBRC API via MCP.  The other an open source bio related MCP that among other things has a pubmed API proxy.
+So I set up a couple MCP servers with Gemini-CLI. Once I coded up which is a simple one to expose a single BVBRC API via MCP.  The other is an open source bio-related MCP that, among other things, has a pubmed API proxy.
 
 My interaction was interesting and follows
 
@@ -83,10 +88,10 @@ Answer
   Would you like me to refine the search with more specific keywords or filter by publication date?
 ```
 
-55 results were found  ( I truncated the output here..  as it was long with the abstract for each returned
+55 results were found  (I truncated the output here.  as it was long with the abstract for each returned
 
 Question asked:
-> can you take the most recent three articles and summarize them.  Also note where they agree and diverge
+> can you take the most recent three articles and summarize them?  Also note where they agree and diverge
 
 
 Answer:
