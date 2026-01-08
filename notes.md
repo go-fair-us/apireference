@@ -2,6 +2,7 @@
 
 ## Notes
 
+* be sure to reference [FHHR](https://www.hl7.org/fhir/overview.html) 
 * Is this a training goal or a developer resource?
   * If training is the specific goal, a landscape review or implementation approaches?
 * There is the issue of audience and the spectrum of capacity to support different approaches.  Some will want a simple almost file-based approach, while others will want a more traditional API service that accesses their more structure data store (relations, graph, etc.)
@@ -30,6 +31,13 @@
 * Coalition of the willing: ImmPort, TB Portals, maybe IEDB
 * Making the approach also provide for a search capacity?
 * If you make one resource FAIR, can it automatically interoperate with another FAIR resource?
+
+
+## Persona development
+
+Refresh myself with what we did at https://ufokn.com/prototypes.html
+
+
 
 
 ## Resources
