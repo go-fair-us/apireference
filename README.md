@@ -47,3 +47,15 @@ The API reference implementation is intended for developers and data managers wh
 
 The API implementation approach should follow the guidelines outlined in the Blueprint, with a focus on providing a standardized and machine-readable interface for accessing metadata. This includes adhering to the JSON-LD encoding and IRI structure recommendations, as well as using the HTTP GET method for metadata retrieval. API documentation should be provided in OpenAPI/Swagger format for ease of use and machine-readability.
 
+## Repository Setup
+
+This repository uses uv.  To install uv, reference: https://docs.astral.sh/uv/getting-started/installation/
+
+After that something like:
+
+```bash
+uv init 
+uv venv .venv --python 3.12
+uv pip install -r requirements.txt
+```
+

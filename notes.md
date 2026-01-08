@@ -21,7 +21,7 @@
 
 * Look also at [NIAID site review for API status](https://docs.google.com/spreadsheets/d/1Ty5CeT1XWx5_0dF8_6b7ceq9kWpb1U-VmNwXIETptps/edit?gid=1365046364#gid=1365046364)
 
-* Review  DRS from GA4AH, start with:  https://grok.com/chat/afcecfcd-a5fa-4640-864a-137192157a5f
+* Review DRS from GA4AH, start with: https://grok.com/chat/afcecfcd-a5fa-4640-864a-137192157a5f
 
 
 * What would a proof of concept look like?
@@ -30,6 +30,13 @@
 * Coalition of the willing: ImmPort, TB Portals, maybe IEDB
 * Making the approach also provide for a search capacity?
 * If you make one resource FAIR, can it automatically interoperate with another FAIR resource?
+
+
+## Resources
+
+* https://docs.google.com/spreadsheets/d/1Ty5CeT1XWx5_0dF8_6b7ceq9kWpb1U-VmNwXIETptps/edit?gid=1365046364#gid=1365046364
+* https://docs.google.com/spreadsheets/d/1WJzMLn2OQ6oJMi94LHdw6PDexpQrnh31_3pC_YsFc8k/edit?gid=0#gid=0
+* https://docs.google.com/document/d/1I2sLM-bNXIO0DBxs9B34hyo9c2unL_1I8nN35lkK8zk/edit?tab=t.0#heading=h.xx99619yvpz3
 
 
 

@@ -2,7 +2,9 @@
 
 ## About
 
-This is a simpleserver that provides documents from the data directory in patterns that align to the guidance.  It was used to test the creation of the client code based on the OpenAPI/Swagger document.    There is both a Go and Python based version.
+This is a simple server that provides documents from the data directory in patterns that align to the guidance.  
+It was used to test the creation of the client code based on the OpenAPI/Swagger document.   
+There is a Go and Python-based version.
 
 It is a simple demo only of no real value.
 
