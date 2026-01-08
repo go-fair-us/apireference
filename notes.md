@@ -2,11 +2,15 @@
 
 ## Notes
 
-* Is this a training goal or a developer resourcce?
+* Is this a training goal or a developer resource?
   * If training is the specific goal, a landscape review or implementation approaches?
 * There is the issue of audience and the spectrum of capacity to support different approaches.  Some will want a simple almost file-based approach, while others will want a more traditional API service that accesses their more structure data store (relations, graph, etc.)
 
+* see https://docs.google.com/spreadsheets/d/1WJzMLn2OQ6oJMi94LHdw6PDexpQrnh31_3pC_YsFc8k/edit?gid=0#gid=0
 
+* interest in on-demand training has been mentioned
+* There is quite a spectrum of skills and approaches, so a one size fits all webinar might be hard.   Not that it cannot be done, just want to respect everyone's time. 
+* think about using a skills.md (tailored to NIAID) to express api but also connect with domain-specific vocabularies and resources (endpoints)
 
 ## scratch pad
 
@@ -26,3 +30,6 @@
 * Coalition of the willing: ImmPort, TB Portals, maybe IEDB
 * Making the approach also provide for a search capacity?
 * If you make one resource FAIR, can it automatically interoperate with another FAIR resource?
+
+
+
