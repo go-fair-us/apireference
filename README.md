@@ -41,6 +41,7 @@ The minimal API specification in the NIAID Blueprint would significantly improve
 
 The API reference implementation is intended for developers and data managers who are interested in implementing the NIAID Blueprint recommendations.
 
+
 ## Approaches
 
 ### API Implementation
