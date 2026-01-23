@@ -1,6 +1,6 @@
 # Data.gov review
 
-## alt title:  Data.gov, how do you annoy me, let me count the ways
+## alt title: Data.gov, how do you annoy me, let me count the ways
 
 
 ### Landing page
@@ -8,15 +8,15 @@ Let's look at the catalog entry:
 
 https://catalog-beta.data.gov/dataset/etp-covid-19-contracts?from_hint=eyJxIjoiY292aWQiLCJzb3J0IjoicmVsZXZhbmNlIn0%3D
 
-Pulled up in the browser the look is OK.
+Pulled up in the browser, the look is OK.
 
 Sadly, there is no structured metadata with this page:  [validation call](https://validator.schema.org/#url=https%3A%2F%2Fcatalog-beta.data.gov%2Fdataset%2Fetp-covid-19-contracts%3Ffrom_hint%3DeyJxIjoiY292aWQiLCJzb3J0IjoicmVsZXZhbmNlIn0%253D)
 
-So right away any machine action on this entry is not happening easily.  There are links on the page to the metadata is harvested.  That could have been linked in the landing page in a machine resolvable manner, but wasn't.  
+So right away any machine action on this entry is not happening easily.  There are links on the page to the metadata is harvested.  That could have been linked in the landing page in a machine-resolvable manner, but wasn't.  
 
 ### Metadata
 
-OK, Let's look at it.  We assume this is the metadata they got from https://data.ca.gov/.  Oh, it's California, go figure.
+OK, Let's look at it.  We assume this is the metadata they got from https://data.ca.gov/. Oh, it's California, go figure.
 
 https://catalog-beta.data.gov/harvest_record/664051e8-826b-4cea-a2a3-787c49b21eb7/raw
 
@@ -25,18 +25,18 @@ OK, so it's the metadata they harvested, but they host.  Fine(ish).
 That metadata is included at the bottom of this page in the appendix.   It is not good (and that is kind).
 
 * There is no context, so right off it's basically semantically mute and can't be used in any structured manner like a graph
-* it can be blindly index in CKAN, which is what they do.
+* it can be blindly indexed in CKAN, which is what they do.
 * They attempt to express ontology links with prefix values.  This is just wrong without a context, but at least they tried.   However, there is such a mix of vocabularies.  DCAT, VCARD, ORG.  Of these I can appreciate DCAT, but schema.org would scope all of these and align better with current best practices like Croissant and SOSO, etc.
 * There is also NO DEFAULT vocabulary.  So the terms like "fn:" just hang there with absolutely ZERO context, meaning, understanding, etc.  
-* summary, this data graph is WORTHLESS.  
+* in summary, this data graph is WORTHLESS.  
 
 ### APIs
 
 If we wanted to use the APIs, we might visit  https://api.data.gov/.  Which is a bit overwhelming.  
 
-What we likely want is: https://api.data.gov/docs/developer-manual/.  This is better but while it says you need an API key, never bothers to provide link to where that key is. 
+What we likely want is: https://api.data.gov/docs/developer-manual/. This is better, but while it says you need an API key, never bothers to provide a link to where that key is. 
 
-Oh look...  here it is: https://open.gsa.gov/api/datadotgov/.  That was obvious.   
+Oh, look... here it is: https://open.gsa.gov/api/datadotgov/.  That was obvious.   
 
 
 
