@@ -16,7 +16,7 @@ The NIAID repository landscape includes a variety of data systems supporting met
 
 As with other sections of the Blueprint, API recommendations are designed to be customized during the implementation phase to address the needs of each repository in exposing their metadata for human or machine access. For example, if a repository or data generator is not able to develop an API, they can add HTML with embedded metadata, or a downloadable index of the metadata in a computer-accessible format (Fig. 1). On the other end of the spectrum, repositories with advanced API infrastructure could develop complementary services, such as a queryable metadata knowledge graph. Any of these options would enable a data provider to expose resources in a manner that facilitates metadata collection and aggregation.
 
-![Figure 1:](docs/images/API_v2.png)
+![Figure 1:](docs/resources_images/API_v2.png)
 
 Figure 1. Illustration of how metadata can be exposed through an API with various workflows, from the resource to the consumer.  
 
