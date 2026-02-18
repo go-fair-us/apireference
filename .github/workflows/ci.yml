@@ -2,16 +2,21 @@ name: ci
 on:
   push:
     branches:
-      - master
+      - main
 permissions:
   contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # This line tells the job to start in your subdirectory
+    defaults:
+      run:
+        working-directory: ./mkdocs
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material # or just 'mkdocs' if not using material
+      - run: pip install mkdocs-material
+      # MkDocs will now find mkdocs.yml right here
       - run: mkdocs gh-deploy --force
