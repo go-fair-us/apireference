@@ -39,7 +39,28 @@ The minimal API specification in the NIAID Blueprint would significantly improve
 
 ## Audience
 
-The API reference implementation is intended for developers and data managers who are interested in implementing the NIAID Blueprint recommendations.
+There are potentially several paths and entry points for implementing the API recommendations.
+
+We will want to accommodate different levels of expertise and provide guidance for each path.  The following diagram illustrates the different paths and entry points.
+
+Note shown here is the concept of MCP that should be addressed as an additional concept.
+
+```mermaid
+flowchart TD
+    Start1[New to APIs in general] --> Mid1[Overview of various API \n services and clients]
+    Start2[Consumer of APIs] --> Mid1
+
+    Mid1 --> Step2a[Deployment Approaches]
+    Mid2[Experienced in API DevOps] --> Step2b[Validation tools]
+
+    Step2a --> Step3[Example Operations]
+    Step3 --> Step2b
+    
+    Step2b --> Final[Shared Blueprint Alignment ]
+    
+```
+
+
 
 
 ## Approaches
@@ -60,3 +81,15 @@ uv venv .venv --python 3.12
 uv pip install -r requirements.txt
 ```
 
+
+## Outline
+
+
+* What does a simple server look like?  This page describes a basic server implementation using Flask.  [sever hello world](./code/server/README.md)
+* What do clients look like?  This directory holds some
+basic clients for some simple use cases, including some using NIAID resources.  [client 101](./code/clients/README.md)
+* Appendix items
+  * [data.gov resource review](docs/data_gov/README.md)
+  * CLI approaches: [shellScraping.md](code/clients/shellScraping.md)
+  * Link to NIAID resource API information: [niaidAPILinksTable.md](docs/niaidAPILinksTable.md)
+  * [FHIR](docs/FHIR.md)

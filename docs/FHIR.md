@@ -75,7 +75,7 @@ Response is a full JSON ResearchStudy resource including title, conditions, spon
 **Ecosystem Impact**: FHIR bridges basic research repositories (e.g., IEDB, VEuPathDB – which use domain-specific REST) with clinical ones, supporting the NIAID Discovery Portal’s unified search and the “robust, sustainable data architecture” described in the Blueprint.
 
 ### Best Practices for Implementing or Using FHIR APIs
-- Follow the **FHIR for FAIR IG** recommendations.
+- Follow the [**FHIR for FAIR IG** recommendations](https://build.fhir.org/ig/HL7/fhir-for-fair/).
 - Use official profiles (US Core for U.S. data) and validation tools (FHIR Validator).
 - Document with CapabilityStatement and OpenAPI/Swagger.
 - Provide bulk export (FHIR Bulk Data Access IG) for large datasets.

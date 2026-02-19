@@ -1,7 +1,9 @@
 # Data.gov review
 
-## alt title: Data.gov, how do you annoy me, let me count the ways
+## Overview
 
+This is a review of resource from data.gov. It is provided to give an 
+idea of some of the issues that might be encountered when working with data.gov resources.  It highlights the importance of structured metadata and the challenges of machine-actionable data discovery.
 
 ### Landing page
 Let's look at the catalog entry:
@@ -12,7 +14,7 @@ Pulled up in the browser, the look is OK.
 
 Sadly, there is no structured metadata with this page:  [validation call](https://validator.schema.org/#url=https%3A%2F%2Fcatalog-beta.data.gov%2Fdataset%2Fetp-covid-19-contracts%3Ffrom_hint%3DeyJxIjoiY292aWQiLCJzb3J0IjoicmVsZXZhbmNlIn0%253D)
 
-So right away any machine action on this entry is not happening easily.  There are links on the page to the metadata is harvested.  That could have been linked in the landing page in a machine-resolvable manner, but wasn't.  
+So right away any machine action on this entry is not happening easily.  There are links on the page to the metadata is harvested.  That could have been linked to the landing page in a machine-resolvable manner, but wasn't.  
 
 ### Metadata
 
