@@ -2,12 +2,10 @@
 
 ## Notes
 
-* be sure to reference [FHHR](https://www.hl7.org/fhir/overview.html) 
+* be sure to reference [FHIR](https://www.hl7.org/fhir/overview.html) 
 * Is this a training goal or a developer resource?
   * If training is the specific goal, a landscape review or implementation approaches?
 * There is the issue of audience and the spectrum of capacity to support different approaches.  Some will want a simple almost file-based approach, while others will want a more traditional API service that accesses their more structure data store (relations, graph, etc.)
-
-* see https://docs.google.com/spreadsheets/d/1WJzMLn2OQ6oJMi94LHdw6PDexpQrnh31_3pC_YsFc8k/edit?gid=0#gid=0
 
 * interest in on-demand training has been mentioned
 * There is quite a spectrum of skills and approaches, so a one size fits all webinar might be hard.   Not that it cannot be done, just want to respect everyone's time. 
@@ -19,10 +17,6 @@
 * simple means to run docker containers on a schedule
   * look at https://www.genouest.org/godocker/ or https://github.com/mcuadros/ofelia
 
-
-* Look also at [NIAID site review for API status](https://docs.google.com/spreadsheets/d/1Ty5CeT1XWx5_0dF8_6b7ceq9kWpb1U-VmNwXIETptps/edit?gid=1365046364#gid=1365046364)
-
-* Review DRS from GA4AH, start with: https://grok.com/chat/afcecfcd-a5fa-4640-864a-137192157a5f
 
 
 * What would a proof of concept look like?
@@ -36,15 +30,4 @@
 ## Persona development
 
 Refresh myself with what we did at https://ufokn.com/prototypes.html
-
-
-
-
-## Resources
-
-* https://docs.google.com/spreadsheets/d/1Ty5CeT1XWx5_0dF8_6b7ceq9kWpb1U-VmNwXIETptps/edit?gid=1365046364#gid=1365046364
-* https://docs.google.com/spreadsheets/d/1WJzMLn2OQ6oJMi94LHdw6PDexpQrnh31_3pC_YsFc8k/edit?gid=0#gid=0
-* https://docs.google.com/document/d/1I2sLM-bNXIO0DBxs9B34hyo9c2unL_1I8nN35lkK8zk/edit?tab=t.0#heading=h.xx99619yvpz3
-
-
 

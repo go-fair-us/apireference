@@ -6,7 +6,7 @@ This documentation outlines a streamlined way for organizations to share digital
 
 Before we talk about APIs or document URLs, we will address the response package that will be returned.  The Blueprint presents an approach where the response package is modeled in RDF and encoding in JSON-LD. This is similar to the optional FHIR response pattern using RDF and Turtle referenced in the [FHIR Interoperability](#fhir-interoperability) section below. 
 
-Details of this encoding can be seen in the section __Supplemental Table 7. Example JSON-LD Encodings__ on page 23 of [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://docs.google.com/document/d/1y4Jzka6bcIZ_8yyxsJnOxGYrrRrqXv3n21sLJIZNUss/edit?tab=t.0#heading=h.3r4b53mh0wp9).
+Details of this encoding can be seen in the section __Supplemental Table 7. Example JSON-LD Encodings__ on page 23 of [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://pubweb-prod.niaid.nih.gov/research/data-blueprint).
 
 For developers, the best resource is the main reference site at [https://json-ld.org/](https://json-ld.org/). From there you can find libraries for most of the popular languages as well as an [interactive playground](https://json-ld.org/playground/) where you can play with editing JSON-LD or paste in examples from the Blueprint, this repo or others to explore with.  
 

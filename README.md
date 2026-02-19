@@ -2,7 +2,7 @@
 
 ## About
 
-This repo contains implementation details based on the NIH/NIAID Blueprint document titled: [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://docs.google.com/document/d/1y4Jzka6bcIZ_8yyxsJnOxGYrrRrqXv3n21sLJIZNUss/edit?tab=t.0#heading=h.3r4b53mh0wp9).
+This repo contains implementation details based on the NIH/NIAID Blueprint document titled: [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://pubweb-prod.niaid.nih.gov/research/data-blueprint).
 
 The goal is to provide a reference technical implementation for those interested in implementing the guidance in the Blueprint.
 
