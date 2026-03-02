@@ -2,11 +2,11 @@
 
 ## About
 
-This repo contains implementation details based on the NIH/NIAID Blueprint document titled: [A Blueprint for Including Digital Objects in the NIAID Data Ecosystem](https://pubweb-prod.niaid.nih.gov/research/data-blueprint).
+This repo contains implementation details based on the NIH/NIAID Blueprint document titled: [Blueprint to Connect Data Across the NIAID Data Ecosystem](https://pubweb-prod.niaid.nih.gov/research/data-blueprint).
 
-The goal is to provide a reference technical implementation for those interested in implementing the guidance in the Blueprint.
+The goal is to provide a reference implementation for those interested in leveraging the guidance in the Blueprint.
 
-For reference, the key elements of the Blueprint are described below.
+For reference, the key elements of the Blueprint include:
 
 ### Motivation
 
@@ -82,7 +82,7 @@ uv pip install -r requirements.txt
 ```
 
 
-## Outline
+## Index
 
 
 * What does a simple server look like?  This page describes a basic server implementation using Flask.  [sever hello world](./code/server/README.md)
