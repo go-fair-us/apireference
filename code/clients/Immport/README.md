@@ -190,3 +190,6 @@ curl -X 'GET' \
   'https://immport.org/data/query/api/search/seronet/study?ageRange=5-50' \
   -H 'accept: application/json'
 ```
+
+## Studies Client
+
