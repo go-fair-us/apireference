@@ -1,5 +1,7 @@
 # MCP
 
+https://modelcontextprotocol.io/docs/getting-started/intro
+
 ## What is it?
 
 The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is an open-standard, open-source framework designed to standardize how AI systems, particularly large language models (LLMs), connect with external tools, data sources, and systems. Sometimes referred to as a "USB-C" for AI.
@@ -17,6 +19,12 @@ Unlike static API specs, MCP enables agents to query capabilities dynamically, a
 MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs.
 
 ## How to try it
+
+https://github.com/modelcontextprotocol/inspector
+```bash
+npx @modelcontextprotocol/inspector uvx
+
+```
 
 There are several tools that are starting to enable client connections to MCP servers.  Many developed IDEs like VS-code/Cline, Zed and IntelliJ software can be MCP clients and in some cases are MCP servers too.
 
