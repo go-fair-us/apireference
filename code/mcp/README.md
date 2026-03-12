@@ -1,12 +1,36 @@
 # MCP
 
-https://modelcontextprotocol.io/docs/getting-started/intro
 
 ## What is it?
 
 The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is an open-standard, open-source framework designed to standardize how AI systems, particularly large language models (LLMs), connect with external tools, data sources, and systems. Sometimes referred to as a "USB-C" for AI.
 
 Note that MCP is not an API specification, it is a wire protocol, in this case JSON-RPC 2.0. It can work locally via standard IO (stdio) or over http.
+
+Some examples from the community:
+
+* ClinicalTrials: https://github.com/cyanheads/clinicaltrialsgov-mcp-server
+* BioMCP  https://biomcp.org/   (PubMed, ClinicalTrials.gov, and MyVariant.info and more)   This is a master class on MCP!
+* Cracking Shells  https://github.com/CrackingShells  I have a few issues with this one on first review
+* BioThings https://github.com/longevity-genie/biothings-mcp  genes, genetic variants, drugs, and taxonomic information
+* BioPortal MCP:  https://github.com/ncbo/bioportal-mcp
+* Biomni  (impressive) https://biomni.stanford.edu
+* Gget: https://github.com/longevity-genie/gget-mcp  genomics queries and analysis, a wrapper of gget library (which I know nothing about)
+* OpenGenes https://github.com/longevity-genie/opengenes-mcp
+* SynerAge https://github.com/longevity-genie/synergy-age-mcp
+
+
+## Convention
+
+| Method         | Description                                                                                  |
+|----------------|----------------------------------------------------------------------------------------------|
+| initialize     | The first message sent. The server must return its capabilities (tools, resources, prompts). |
+| resources/list | Returns a list of available data objects the model can read.                                 |
+| resources/read | Triggered when the model wants the content of a specific URI.                                |
+| tools/list     | Returns a list of executable functions the server provides.                                  |
+| tools/call     | The actual execution of a tool with provided arguments.                                      |
+| prompts/list   | Returns pre-defined templates for interacting with the model.                                |
+
 
 ## Why not just use APIs (OpenAPI?)
 
@@ -144,3 +168,9 @@ Answer:
 ```
 
 Anyway, a simple and fun interaction with a couple MCP tools mediated by Gemini-CLI
+
+
+## References
+
+* https://modelcontextprotocol.io/docs/getting-started/intro
+* https://claude.com/resources/tutorials/using-the-clinicaltrials-gov-connector-in-claude 
