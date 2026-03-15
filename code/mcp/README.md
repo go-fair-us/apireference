@@ -1,9 +1,8 @@
 # MCP
 
-
 ## What is it?
 
-The Model Context Protocol (MCP), introduced by Anthropic in November 2024, is an open-standard, open-source framework designed to standardize how AI systems, particularly large language models (LLMs), connect with external tools, data sources, and systems. Sometimes referred to as a "USB-C" for AI.
+The **Model Context Protocol (MCP)** is an open standard (originally from Anthropic, the company behind Claude) that makes it easy and secure for AI models (like large language models) to connect to external data, tools, and systems — kind of like a universal "plug" (USB-C for AI) so you don't need custom wiring for every app or service.
 
 Note that MCP is not an API specification, it is a wire protocol, in this case JSON-RPC 2.0. It can work locally via standard IO (stdio) or over http.
 
@@ -20,7 +19,48 @@ Some examples from the community:
 * SynerAge https://github.com/longevity-genie/synergy-age-mcp
 
 
+For example, the BioPortal MCP is a powerful tool for accessing biomedical ontologies and vocabularies. It provides a RESTful API that allows developers to query and retrieve information from various biomedical ontologies, such as UBERON, NCIT, and HPO. This makes it easier to integrate biomedical knowledge into applications and workflows.
+
+Here is an example using the OpenCode client:
+
+![bio.png](images/bioportalMCP.png)
+
+Same query via MCP Inspector
+
+![img.png](images/bioportalMCPInspector.png)
+
+Now, here is a much better example
+
+![img.png](images/bioportalMCPChainOpenCode.png)
+
+
 ## Convention
+
+
+In the context of MCP, the three main building blocks that servers expose to AI clients are **Tools**, **Prompts**, and **Resources**. Here's a simple breakdown:
+
+- **Tools**  
+  These are like **actions** or **functions** the AI can call and execute.  
+  The AI decides when to use them and what to send as input.  
+  Examples: search the web, send an email, run code, query a database, create a calendar event, or edit a file.  
+  → Think of them as the "verbs" — they let the AI *do* something in the real world or in external systems.
+
+- **Prompts**  
+  These are **pre-written templates** or ready-made instructions that guide the AI on how to behave or respond in a specific situation.  
+  They help make interactions consistent, structured, and more reliable (especially for complex or repeated tasks).  
+  Examples: a template that says "Always format bug reports this way" or "Analyze this data using these steps".  
+  → Think of them as reusable recipes or guardrails that tell the AI "when you see this kind of request, follow this pattern".
+- → The somewhat analogous to SKILLS.md files
+
+- **Resources**  
+  These are **data sources** or pieces of information the AI can read and pull into its context.  
+  The AI gets extra knowledge it didn't have before, without needing to store everything itself.  
+  Examples: your local files, Google Drive documents, database contents, Notion pages, GitHub repo, knowledge base articles, or even a company wiki.  
+  → Think of them as the "nouns" — they provide the raw facts, context, or content the AI needs to understand or reason about something.
+
+Together, these three let AI become much more capable: it can **read** current/real data (Resources), **follow smart instructions** (Prompts), and **take actions** (Tools) — all through one standardized, secure connection instead of dozens of separate hacks.
+
+This is especially useful in tools like Claude Desktop, IDEs (VS Code, Cursor), or custom AI agents that need to work with your actual files, apps, or company systems.
 
 | Method         | Description                                                                                  |
 |----------------|----------------------------------------------------------------------------------------------|
@@ -99,12 +139,12 @@ That would be like
 
 > I'll convert this to a screencast
 
-So I set up a couple MCP servers with Gemini-CLI. Once I coded up which is a simple one to expose a single BVBRC API via MCP.  The other is an open source bio-related MCP that, among other things, has a pubmed API proxy.
+So I set up a couple MCP servers with Gemini-CLI. Once I coded up which is simple to expose a single BVBRC API via MCP.  The other is an open source bio-related MCP that, among other things, has a pubmed API proxy.
 
 My interaction was interesting and follows
 
 Question asked:
-> can you give me synonyms for Synercid using the bvbrc tools
+> can you give me synonyms for Synercid using the bvbrc tools?
 
 Answer:
 ```
@@ -174,3 +214,4 @@ Anyway, a simple and fun interaction with a couple MCP tools mediated by Gemini-
 
 * https://modelcontextprotocol.io/docs/getting-started/intro
 * https://claude.com/resources/tutorials/using-the-clinicaltrials-gov-connector-in-claude 
+* https://chrlschn.dev/blog/2026/03/mcp-is-dead-long-live-mcp/
