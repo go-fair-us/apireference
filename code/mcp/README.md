@@ -31,7 +31,7 @@ Same query via MCP Inspector
 
 Now, here is a much better example
 
-![img.png](images/bioportalMCPChainOpenCode.png)
+![img.png](images/mcpLargerSequence.png)
 
 
 ## Convention
