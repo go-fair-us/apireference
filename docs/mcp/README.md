@@ -97,9 +97,17 @@ There are several tools that are starting to enable client connections to MCP se
 
 Also, tools like Gemini-CLI and Claude-Cli or web-based tools like LibreChat can interact with MCP.   We will use Gemini-CLI and LibreChat here for our examples.
 
+## Try at home
+
+An easy way to try MCP is to use the [ModelContextProtocol/inspector](https://github.com/modelcontextprotocol/inspector) tool.  It allows you to inspect MCP servers and clients and see the messages that are being exchanged.
+
+Alternatively, you can use an agent harness like [OpenCode](https://opencode.ai/).   If you install opencode you can clone this repository and run opencode from within it.   In this repo is the file [opencode.json](../../opencode.json) which configures a set open MCP servers.  
+
+This is the approach used in the example above for the prompt "Please do a TP53 Gene analysis".  
+
 ## Demo
 
-I coded up a simple MCP over one of the BVBRC APIs.   I know Kevin has set up an MCP too over an API.  Doing an API gateway with MCP is not the gold standard of MCP, of course.   But it's quick and dirty and mostly what you see going on with this set.
+I coded up a simple MCP over one of the BVBRC APIs.   I know Kevin has set up an MCP too over an API.  Doing an API gateway with MCP is not the gold standard of MCP, of course.   But it's quick and dirty and mostly what you see going on with this set. 
 
 it looks like:
 
@@ -118,7 +126,6 @@ That would be like
 
 
 ## Bio Examples
-
 
 
 ## Other Bio MCP References
@@ -218,3 +225,4 @@ Anyway, a simple and fun interaction with a couple MCP tools mediated by Gemini-
 * https://modelcontextprotocol.io/docs/getting-started/intro
 * https://claude.com/resources/tutorials/using-the-clinicaltrials-gov-connector-in-claude 
 * https://chrlschn.dev/blog/2026/03/mcp-is-dead-long-live-mcp/
+* https://www.embl.org/news/people-perspectives/connecting-ai-to-biology-model-context-protocol/
