@@ -6,21 +6,20 @@ The **Model Context Protocol (MCP)** is an open standard (originally from Anthro
 
 Note that MCP is not an API specification, it is a wire protocol, in this case JSON-RPC 2.0. It can work locally via standard IO (stdio) or over http.
 
-> This is an MCP registry [biocontext.ai](https://biocontext.ai/)
-> I still list some MCP services or related project below as well.
+### Some examples from the community:
 
-Some examples from the community:
+An example MCP registry can be found at  [biocontext.ai](https://biocontext.ai/).
 
 * ClinicalTrials: https://github.com/cyanheads/clinicaltrialsgov-mcp-server
 * BioMCP  https://biomcp.org/   (PubMed, ClinicalTrials.gov, and MyVariant.info and more)   This is a master class on MCP!
-* Cracking Shells  https://github.com/CrackingShells  I have a few issues with this one on first review
 * BioThings https://github.com/longevity-genie/biothings-mcp  genes, genetic variants, drugs, and taxonomic information
 * BioPortal MCP:  https://github.com/ncbo/bioportal-mcp
-* Biomni  (impressive) https://biomni.stanford.edu
-* Gget: https://github.com/longevity-genie/gget-mcp  genomics queries and analysis, a wrapper of gget library (which I know nothing about)
-* OpenGenes https://github.com/longevity-genie/opengenes-mcp
-* SynerAge https://github.com/longevity-genie/synergy-age-mcp
-
+* Biomni:  https://biomni.stanford.edu
+* Gget: https://github.com/longevity-genie/gget-mcp genomics queries and analysis, a wrapper of gget library (which I know nothing about)
+* Not really sure about the following ones
+  * OpenGenes https://github.com/longevity-genie/opengenes-mcp
+  * SynerAge https://github.com/longevity-genie/synergy-age-mcp
+  * Cracking Shells  https://github.com/CrackingShells  
 
 For example, the BioPortal MCP is a powerful tool for accessing biomedical ontologies and vocabularies. It provides a RESTful API that allows developers to query and retrieve information from various biomedical ontologies, such as UBERON, NCIT, and HPO. This makes it easier to integrate biomedical knowledge into applications and workflows.
 
@@ -77,6 +76,8 @@ This is especially useful in tools like Claude Desktop, IDEs (VS Code, Cursor), 
 
 ## Why not just use APIs (OpenAPI?)
 
+While it is fair to think of MCP and APIs by convention, there are fundamental differences in their design and purpose.  So while MCP is needed in all cases by all services, if the functionality is already provided by an API, MCP can still offer additional benefits.
+
 * OpenAPI describes; MCP prescribes. You can't fix inconsistency by documenting it better—you need enforcement at the protocol level.
 * Retrofitting fails at scale. OpenAPI would need to standardize transport, mandate single-location inputs, require specific schemas, add bidirectional primitives—essentially becoming a different protocol.
 * The ecosystem problem. Even if OpenAPI added these features tomorrow, millions of existing APIs wouldn't adopt them. MCP starts fresh with AI-first principles.
@@ -85,17 +86,6 @@ Unlike static API specs, MCP enables agents to query capabilities dynamically, a
 
 MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs.
 
-## How to try it
-
-https://github.com/modelcontextprotocol/inspector
-```bash
-npx @modelcontextprotocol/inspector uvx
-
-```
-
-There are several tools that are starting to enable client connections to MCP servers.  Many developed IDEs like VS-code/Cline, Zed and IntelliJ software can be MCP clients and in some cases are MCP servers too.
-
-Also, tools like Gemini-CLI and Claude-Cli or web-based tools like LibreChat can interact with MCP.   We will use Gemini-CLI and LibreChat here for our examples.
 
 ## Try at home
 
@@ -103,41 +93,15 @@ An easy way to try MCP is to use the [ModelContextProtocol/inspector](https://gi
 
 Alternatively, you can use an agent harness like [OpenCode](https://opencode.ai/).   If you install opencode you can clone this repository and run opencode from within it.   In this repo is the file [opencode.json](../../opencode.json) which configures a set open MCP servers.  
 
-This is the approach used in the example above for the prompt "Please do a TP53 Gene analysis".  
-
-## Demo
-
-I coded up a simple MCP over one of the BVBRC APIs.   I know Kevin has set up an MCP too over an API.  Doing an API gateway with MCP is not the gold standard of MCP, of course.   But it's quick and dirty and mostly what you see going on with this set. 
-
-it looks like:
-
-[AI Agent] ⟷ MCP Client ⟷ MCP Server ⟷ REST API ⟷ Service
-
-Later, as people start to leverage MCP for what it can really do, it will get more impressive.
-
-That would be like
-
-[AI Agent] ⟷ MCP Client ⟷ MCP Server ⟷ Service
+This is the approach used in the example above for the prompt "Please do a TP53 Gene analysis."  
 
 
-* BioMCP
-* NDE MCP ?
-* BVBRC MCP
+There are several tools that are starting to enable client connections to MCP servers.  Many developed IDEs like VS-code/Cline, Zed and IntelliJ software can be MCP clients and in some cases are MCP servers too.
 
+Also, tools like OpenCode, Pi, Gemini-CLI, and Claude-Cli or web-based tools like LibreChat can interact with MCP.  
 
 ## Bio Examples
 
-
-## Other Bio MCP References
-
-* BioMCP  https://biomcp.org/   (PubMed, ClinicalTrials.gov, and MyVariant.info and more)   This is a master class on MCP!
-* Cracking Shells  https://github.com/CrackingShells  I have a few issues with this one on first review
-* BioThings https://github.com/longevity-genie/biothings-mcp  genes, genetic variants, drugs, and taxonomic information
-* BioPortal MCP:  https://github.com/ncbo/bioportal-mcp
-* Biomni  (impressive, not MCP and you need to request access) https://biomni.stanford.edu
-* Gget: https://github.com/longevity-genie/gget-mcp  genomics queries and analysis, a wrapper of `gget` library (which I know nothing about)
-* OpenGenes https://github.com/longevity-genie/opengenes-mcp
-* SynerAge https://github.com/longevity-genie/synergy-age-mcp
 
 * https://github.com/tnnandi/agentic_lab
 * https://sysbio-curie.github.io/Neko
@@ -145,7 +109,7 @@ That would be like
 * https://physicell.org
 
 
-## Demo
+## Demo via LibreChat
 
 > I'll convert this to a screencast
 
