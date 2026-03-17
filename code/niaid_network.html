@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: sans-serif; margin: 0; background: #fff; color: #333; }
+#controls { padding: 10px 12px 4px; }
+#filter-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+.tag-btn {
+  padding: 3px 12px; border-radius: 999px;
+  border: 1px solid #ccc; background: #f5f5f5;
+  color: #555; cursor: pointer; font-size: 11px; transition: all .15s;
+}
+.tag-btn.active { background: #333; color: #fff; border-color: #333; }
+#link-legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 11px; color: #666; margin-bottom: 5px; }
+.lsw { display:inline-block; width:22px; height:2px; vertical-align:middle; margin-right:3px; border-radius:1px; }
+#node-legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 11px; color: #555; margin-bottom: 4px; }
+.ldot { display:inline-block; width:10px; height:10px; border-radius:50%; vertical-align:middle; margin-right:4px; }
+#graph-wrap { position: relative; }
+canvas { display: block; cursor: grab; }
+canvas:active { cursor: grabbing; }
+#tooltip {
+  position: absolute; pointer-events: none;
+  background: #fff; border: 1px solid #ddd; border-radius: 8px;
+  padding: 10px 14px; font-size: 12px; line-height: 1.5;
+  max-width: 240px; display: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); z-index: 10;
+}
+#tooltip .tt-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+#tooltip .tt-row { color: #666; }
+#hint { font-size: 11px; color: #999; padding: 0 12px 6px; }
+</style>
+</head>
+<body>
+<div id="controls">
+  <div id="filter-row">
+    <button class="tag-btn active" onclick="setGroup('all',this)">All groups</button>
+    <button class="tag-btn" onclick="setGroup('DAIDS',this)">DAIDS</button>
+    <button class="tag-btn" onclick="setGroup('DAIT',this)">DAIT</button>
+    <button class="tag-btn" onclick="setGroup('DMID',this)">DMID</button>
+    <button class="tag-btn" onclick="setGroup('OCICB',this)">OCICB</button>
+    <button class="tag-btn" onclick="setGroup('NDE',this)">NDE</button>
+    <button class="tag-btn" onclick="setGroup('?',this)">External</button>
+  </div>
+  <div id="link-legend">
+    <span><span class="lsw" style="background:#7F77DD"></span>Same group</span>
+    <span><span class="lsw" style="background:#1D9E75"></span>NDE registered</span>
+    <span><span class="lsw" style="background:#EF9F27"></span>GDS registered</span>
+    <span style="display:flex;align-items:center;gap:3px">
+      <svg width="22" height="6"><line x1="0" y1="3" x2="22" y2="3" stroke="#D85A30" stroke-width="2" stroke-dasharray="4,3"/></svg>
+      Shared API style
+    </span>
+  </div>
+  <div id="node-legend">
+    <span><span class="ldot" style="background:#185FA5"></span>DAIDS</span>
+    <span><span class="ldot" style="background:#1D9E75"></span>DAIT</span>
+    <span><span class="ldot" style="background:#BA7517"></span>DMID</span>
+    <span><span class="ldot" style="background:#A32D2D"></span>OCICB</span>
+    <span><span class="ldot" style="background:#534AB7"></span>NDE</span>
+    <span><span class="ldot" style="background:#888780"></span>External</span>
+  </div>
+</div>
+<div id="hint">Hover nodes for details &nbsp;&middot;&nbsp; Click to open URL &nbsp;&middot;&nbsp; Drag to rearrange &nbsp;&middot;&nbsp; Scroll to zoom</div>
+<div id="graph-wrap">
+  <canvas id="c"></canvas>
+  <div id="tooltip"></div>
+</div>
+
+<script>
+const nodes = [
+  {id:'MWCCS',        label:'MWCCS',          group:'DAIDS', style:'',                nde:false, gds:false, open:false, access:'DAR/DUA',   url:'https://statepi.jhsph.edu/mwccs/',              full:'MACS WHIS Combined Cohort Study'},
+  {id:'ACTG',         label:'ACTG',            group:'DAIDS', style:'',                nde:false, gds:false, open:false, access:'Open',       url:'https://actgnetwork.org/',                       full:'AIDS Clinical Trials Group'},
+  {id:'IEDB',         label:'IEDB',            group:'DAIT',  style:'OpenAPI/Swagger', nde:false, gds:false, open:true,  access:'Open',       url:'https://www.iedb.org/',                          full:'Immune Epitope Database'},
+  {id:'ImmPort',      label:'ImmPort',         group:'DAIT',  style:'OpenAPI/Swagger', nde:true,  gds:true,  open:true,  access:'Open',       url:'https://www.immport.org/',                       full:'Immunology Database and Analysis Portal'},
+  {id:'ITN',          label:'ITN Trialshare',  group:'DAIT',  style:'',                nde:false, gds:false, open:false, access:'Controlled', url:'https://www.itntrialshare.org/',                 full:'ITN Trialshare'},
+  {id:'ImmuneSpace',  label:'ImmuneSpace',     group:'DAIT',  style:'',                nde:false, gds:false, open:false, access:'Controlled', url:'https://immunespace.org/query/filters',          full:'ImmuneSpace'},
+  {id:'VeuPathDB',    label:'VEuPathDB',       group:'DMID',  style:'RESTful',         nde:true,  gds:true,  open:true,  access:'Open',       url:'https://veupathdb.org/',                         full:'VEuPathDB'},
+  {id:'BVBRC',        label:'BV-BRC',          group:'DMID',  style:'RESTful',         nde:false, gds:false, open:true,  access:'Open',       url:'https://www.bv-brc.org/',                        full:'Bacterial and Viral Bioinformatics Resource Center'},
+  {id:'CEIRR',        label:'CEIRR',           group:'DMID',  style:'',                nde:false, gds:false, open:false, access:'Aggregate',  url:'https://www.ceirr-network.org/',                 full:'Centers of Excellence for Influenza Research'},
+  {id:'ClinEpiDB',    label:'ClinEpiDB',       group:'DMID',  style:'',                nde:true,  gds:true,  open:true,  access:'DAR/DUA',    url:'https://clinepidb.org/',                         full:'ClinEpiDB'},
+  {id:'ACDN',         label:'ACDN',            group:'OCICB', style:'Digital Objects', nde:true,  gds:false, open:false, access:'DAR/DUA',    url:'https://accessclinicaldata.niaid.nih.gov/',      full:'AccessClinicalData@NIAID'},
+  {id:'TBPortals',    label:'TB Portals',      group:'OCICB', style:'Digital Objects', nde:false, gds:false, open:false, access:'Token/DUA',  url:'https://tbportals.niaid.nih.gov/',               full:'TB Portals'},
+  {id:'TBDepot',      label:'TB DEPOT API',    group:'OCICB', style:'OpenAPI/Swagger', nde:false, gds:false, open:false, access:'Token',      url:'https://analytic.tbportals.niaid.nih.gov/',      full:'TB Portals Analytic/DEPOT API'},
+  {id:'UniprotSPARQL',label:'UniProt SPARQL',  group:'?',     style:'SPARQL',          nde:false, gds:false, open:true,  access:'Open',       url:'https://sparql.uniprot.org/',                    full:'UniProt SPARQL endpoint'},
+  {id:'DBAASP',       label:'DBAASP',          group:'DMID',  style:'OpenAPI/Swagger', nde:false, gds:false, open:true,  access:'Open',       url:'https://dbaasp.org/',                            full:'DBAASP: Antimicrobial Peptides DB'},
+  {id:'NDE',          label:'NDE Discovery',   group:'NDE',   style:'RESTful',         nde:true,  gds:false, open:true,  access:'Open',       url:'https://data.niaid.nih.gov/',                    full:'NIAID Data Ecosystem Discovery Portal API'},
+  {id:'UniprotREST',  label:'UniProt REST',    group:'?',     style:'RESTful+OpenAPI', nde:false, gds:false, open:true,  access:'Open',       url:'https://www.uniprot.org/help/api',               full:'UniProt REST API'},
+];
+
+const groupColors = {
+  'DAIDS':'#185FA5', 'DAIT':'#1D9E75', 'DMID':'#BA7517',
+  'OCICB':'#A32D2D', 'NDE':'#534AB7',  '?':'#888780'
+};
+
+const links = [];
+
+// Same-group links
+const byGroup = {};
+nodes.forEach(n => { (byGroup[n.group] = byGroup[n.group] || []).push(n.id); });
+Object.values(byGroup).forEach(ids => {
+  for (let i = 0; i < ids.length; i++)
+    for (let j = i+1; j < ids.length; j++)
+      links.push({ source: ids[i], target: ids[j], type: 'group' });
+});
+
+// NDE hub spokes
+nodes.filter(n => n.nde && n.id !== 'NDE').forEach(n =>
+  links.push({ source: n.id, target: 'NDE', type: 'nde' })
+);
+
+// GDS peer links
+const gdsNodes = nodes.filter(n => n.gds).map(n => n.id);
+for (let i = 0; i < gdsNodes.length; i++)
+  for (let j = i+1; j < gdsNodes.length; j++)
+    links.push({ source: gdsNodes[i], target: gdsNodes[j], type: 'gds' });
+
+// Shared API style links (cross-group only)
+const styleGroups = {};
+nodes.forEach(n => { if (n.style) (styleGroups[n.style] = styleGroups[n.style] || []).push(n.id); });
+Object.values(styleGroups).forEach(ids => {
+  for (let i = 0; i < ids.length; i++)
+    for (let j = i+1; j < ids.length; j++) {
+      const gi = nodes.find(n => n.id === ids[i]).group;
+      const gj = nodes.find(n => n.id === ids[j]).group;
+      if (gi !== gj) links.push({ source: ids[i], target: ids[j], type: 'style' });
+    }
+});
+
+const linkColors = { group:'#7F77DD', nde:'#1D9E75', gds:'#EF9F27', style:'#D85A30' };
+const linkWidth  = { group:1.2, nde:2, gds:2, style:1 };
+const linkDash   = { group:[], nde:[], gds:[], style:[4,3] };
+
+const canvas  = document.getElementById('c');
+const ctx     = canvas.getContext('2d');
+const tooltip = document.getElementById('tooltip');
+let W, H, sim, activeGroup = 'all';
+let transform = d3.zoomIdentity;
+
+function resize() {
+  W = window.innerWidth;
+  H = Math.max(460, W * 0.60);
+  const dpr = devicePixelRatio || 1;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  if (sim) { sim.force('center', d3.forceCenter(W/2, H/2)); sim.alpha(0.3).restart(); }
+}
+
+function visibleNodes() {
+  return activeGroup === 'all' ? nodes : nodes.filter(n => n.group === activeGroup);
+}
+function visibleIds() { return new Set(visibleNodes().map(n => n.id)); }
+function visibleLinks() {
+  const ids = visibleIds();
+  return links.filter(l => ids.has(l.source.id || l.source) && ids.has(l.target.id || l.target));
+}
+
+function buildSim() {
+  const vn = visibleNodes();
+  const vl = visibleLinks();
+  if (sim) sim.stop();
+  sim = d3.forceSimulation(vn)
+    .force('link', d3.forceLink(vl).id(d => d.id)
+      .distance(d => d.type==='group'?110 : d.type==='nde'?85 : 140)
+      .strength(d => d.type==='group'?0.3 : 0.6))
+    .force('charge', d3.forceManyBody().strength(-290))
+    .force('center', d3.forceCenter(W/2, H/2))
+    .force('collide', d3.forceCollide(40))
+    .on('tick', draw);
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.translate(transform.x, transform.y);
+  ctx.scale(transform.k, transform.k);
+
+  visibleLinks().forEach(l => {
+    ctx.beginPath();
+    ctx.moveTo(l.source.x, l.source.y);
+    ctx.lineTo(l.target.x, l.target.y);
+    ctx.strokeStyle = linkColors[l.type] + '88';
+    ctx.lineWidth   = linkWidth[l.type];
+    ctx.setLineDash(linkDash[l.type]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  });
+
+  visibleNodes().forEach(n => {
+    const r = n.id === 'NDE' ? 26 : 19;
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, r, 0, 2 * Math.PI);
+    ctx.fillStyle = groupColors[n.group] || '#888';
+    ctx.globalAlpha = 0.92; ctx.fill(); ctx.globalAlpha = 1;
+    ctx.strokeStyle = groupColors[n.group] || '#888';
+    ctx.lineWidth = 1.5; ctx.stroke();
+
+    let bx = n.x + r - 5, by = n.y - r + 5;
+    if (n.nde) {
+      ctx.beginPath(); ctx.arc(bx, by, 5, 0, 2*Math.PI);
+      ctx.fillStyle = '#1D9E75'; ctx.fill(); bx -= 12;
+    }
+    if (n.gds) {
+      ctx.beginPath(); ctx.arc(bx, by, 5, 0, 2*Math.PI);
+      ctx.fillStyle = '#EF9F27'; ctx.fill();
+    }
+
+    const parts = n.label.split('\n');
+    ctx.fillStyle    = '#fff';
+    ctx.font         = (n.id==='NDE' ? '600 11px' : '10px') + ' sans-serif';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    if (parts.length === 2) {
+      ctx.fillText(parts[0], n.x, n.y - 6);
+      ctx.fillText(parts[1], n.x, n.y + 6);
+    } else {
+      ctx.fillText(n.label, n.x, n.y);
+    }
+  });
+
+  ctx.restore();
+}
+
+const zoom = d3.zoom().scaleExtent([0.3, 3]).on('zoom', e => { transform = e.transform; draw(); });
+d3.select(canvas).call(zoom);
+
+let dragging = null;
+function toSim(cx, cy) { return [(cx - transform.x)/transform.k, (cy - transform.y)/transform.k]; }
+
+canvas.addEventListener('mousedown', e => {
+  const [sx,sy] = toSim(e.offsetX, e.offsetY);
+  dragging = visibleNodes().find(n => Math.hypot(n.x-sx, n.y-sy) < 24);
+  if (dragging) { dragging.fx = dragging.x; dragging.fy = dragging.y; sim.alphaTarget(0.1).restart(); }
+});
+canvas.addEventListener('mousemove', e => {
+  const [sx,sy] = toSim(e.offsetX, e.offsetY);
+  if (dragging) { dragging.fx = sx; dragging.fy = sy; return; }
+  const hov = visibleNodes().find(n => Math.hypot(n.x-sx, n.y-sy) < 24);
+  if (hov) {
+    tooltip.style.display = 'block';
+    tooltip.style.left = (e.offsetX + 16) + 'px';
+    tooltip.style.top  = (e.offsetY - 8)  + 'px';
+    tooltip.innerHTML =
+      '<div class="tt-name">' + hov.full + '</div>'
+      + '<div class="tt-row">Group: ' + hov.group + '</div>'
+      + '<div class="tt-row">API style: ' + (hov.style || '\u2014') + '</div>'
+      + '<div class="tt-row">Open web: ' + (hov.open ? 'Yes' : 'No')
+      + '&nbsp;|&nbsp;NDE: ' + (hov.nde ? '\u2713' : '\u2014')
+      + '&nbsp;|&nbsp;GDS: ' + (hov.gds ? '\u2713' : '\u2014') + '</div>'
+      + '<div class="tt-row">Access: ' + hov.access + '</div>';
+    canvas.style.cursor = 'pointer';
+  } else {
+    tooltip.style.display = 'none';
+    canvas.style.cursor = 'grab';
+  }
+});
+canvas.addEventListener('mouseup', () => {
+  if (dragging) { dragging.fx = null; dragging.fy = null; sim.alphaTarget(0); dragging = null; }
+});
+canvas.addEventListener('click', e => {
+  const [sx,sy] = toSim(e.offsetX, e.offsetY);
+  const hov = visibleNodes().find(n => Math.hypot(n.x-sx, n.y-sy) < 24);
+  if (hov && hov.url) window.open(hov.url, '_blank');
+});
+
+function setGroup(g, btn) {
+  activeGroup = g;
+  document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  buildSim();
+}
+
+resize();
+buildSim();
+window.addEventListener('resize', () => { resize(); buildSim(); });
+</script>
+</body>
+</html>

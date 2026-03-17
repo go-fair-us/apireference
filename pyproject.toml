@@ -13,6 +13,7 @@ dependencies = [
     "ipykernel>=7.2.0",
     "ipysigma>=0.24.6",
     "jsonify>=0.5",
+    "matplotlib>=3.10.8",
     "networkx>=3.6.1",
     "pandas>=3.0.1",
     "pyarrow>=23.0.1",
