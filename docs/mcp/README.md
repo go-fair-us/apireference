@@ -87,6 +87,25 @@ Unlike static API specs, MCP enables agents to query capabilities dynamically, a
 MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs.
 
 
+## Security issues (placeholder text)
+
+Here are some of the primary security concerns with MCP, drawn from analyses of its implementation in AI/agentic systems (including NIAID-style ecosystems):
+
+#### Exposed or Unauthenticated MCP Servers
+Many MCP servers (reports cite ~43% in scans) are publicly accessible with weak or missing authentication. Attackers can discover them easily, introduce rogue servers, hijack connections, or steal credentials. This creates an entry point for unauthorized LLM interactions with NIAID data. 
+
+#### Over-Permissioned Access and the Confused Deputy Problem
+MCP agents often receive broad permissions to files, APIs, or datasets. An LLM could inadvertently (or via manipulation) access or exfiltrate sensitive patient/clinical data beyond what’s intended. The “confused deputy” issue arises when the protocol delegates authority without tight scoping.
+
+#### Prompt Injection and Malicious Context
+Attackers can embed hidden instructions in MCP messages or tool outputs that appear harmless to users but cause the LLM to execute harmful actions (e.g., data leakage or unauthorized queries). Malicious-by-design MCP components exploit the trust placed in the protocol.
+
+#### Supply Chain and Tool Risks
+MCP relies on external tools/services; compromised or untrusted MCP components can lead to data poisoning, or arbitrary code execution. 
+
+#### Privacy Gaps, Lack of Auditing, and Data Exposure
+Differences between UI and API behavior, plus weak versioning/provenance tracking, can expose data not intended for AI consumption. Insufficient logging makes it hard to detect or audit misuse—critical for compliance in health research.
+ 
 ## Try at home
 
 An easy way to try MCP is to use the [ModelContextProtocol/inspector](https://github.com/modelcontextprotocol/inspector) tool.  It allows you to inspect MCP servers and clients and see the messages that are being exchanged.
