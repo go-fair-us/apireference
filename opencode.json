@@ -11,11 +11,6 @@
       "url": "https://clinicaltrials.caseyjhand.com/mcp",
       "enabled": true
     },
-    "biothings_mcp": {
-      "type": "remote",
-      "url": "https://biothings.longevity-genie.info/mcp",
-      "enabled": true
-    },
     "gget_mcp": {
       "type": "remote",
       "url": "https://gget-mcp.longevity-genie.info/mcp",
@@ -34,6 +29,11 @@
     "biocontext_kb_mcp": {
       "type": "remote",
       "url": "https://biocontext-kb.fastmcp.app/mcp",
+      "enabled": true
+    },
+    "WODB": {
+      "type": "remote",
+      "url": "https://frink.apps.renci.org/mcp/proto-okn/mcp",
       "enabled": true
     }
   }
