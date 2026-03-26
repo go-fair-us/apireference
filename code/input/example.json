@@ -1,0 +1,616 @@
+{
+  "@type": "ResourceCatalog",
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "description": "For the schema, consider https://bioschemas.org/types/Phenotype",
+      "displayName": "Phenotype",
+      "name": "Phenotype",
+      "url": "http://purl.obolibrary.org/obo/NCIT_C16977"
+    },
+    {
+      "@type": "DefinedTerm",
+      "description": "Not distinct from Specimen as a schema. For schema consider, https://bioschemas.org/types/BioSample/",
+      "displayName": "Sample",
+      "name": "Sample",
+      "url": "http://www.w3.org/ns/sosa/Sample"
+    },
+    {
+      "@type": "DefinedTerm",
+      "description": "For schema, consider https://schema.org/Taxon",
+      "displayName": "Taxon",
+      "name": "Taxon",
+      "url": "http://purl.obolibrary.org/obo/NCIT_C40098"
+    }
+  ],
+  "abstract": "BacDive is a BMBF supported IID repository that includes phenotypic data.",
+  "alternateName": "Bacterial Diversity Metadatabase",
+  "author": [
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Podstawka",
+      "givenName": "Adam",
+      "name": "Adam Podstawka"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Ebeling",
+      "givenName": "Christian",
+      "name": "Christian Ebeling"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Schober",
+      "givenName": "Isabel",
+      "name": "Isabel Schober"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Koblitz",
+      "givenName": "Julia",
+      "name": "Julia Koblitz"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Overmann",
+      "givenName": "J\u00f6rg",
+      "name": "J\u00f6rg Overmann"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Sard\u00e0",
+      "givenName": "Joaquim",
+      "name": "Joaquim Sard\u00e0"
+    },
+    {
+      "@type": "Person",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Leibniz Institut DSMZ"
+      },
+      "familyName": "Reimer",
+      "givenName": "Lorenz",
+      "name": "Lorenz Reimer"
+    }
+  ],
+  "citation": [
+    {
+      "@type": "ScholarlyArticle",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Reimer LC"
+        },
+        {
+          "@type": "Person",
+          "name": "Sarda Carbasse J"
+        },
+        {
+          "@type": "Person",
+          "name": "Koblitz J"
+        },
+        {
+          "@type": "Person",
+          "name": "Ebeling C"
+        },
+        {
+          "@type": "Person",
+          "name": "Podstawka A"
+        },
+        {
+          "@type": "Person",
+          "name": "Overmann J"
+        }
+      ],
+      "datePublished": "2022-01-07",
+      "fromPMID": true,
+      "identifier": "PMID:34718743",
+      "journalName": "Nucleic acids research",
+      "name": "BacDive in 2022: the knowledge base for standardized bacterial and archaeal data.",
+      "pmid": "34718743",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34718743/"
+    }
+  ],
+  "citedBy": [
+    {
+      "@type": "ScholarlyArticle",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Santangelo BE"
+        },
+        {
+          "@type": "Person",
+          "name": "Apgar M"
+        },
+        {
+          "@type": "Person",
+          "name": "Colorado ASB"
+        },
+        {
+          "@type": "Person",
+          "name": "Martin CG"
+        },
+        {
+          "@type": "Person",
+          "name": "Sterrett J"
+        },
+        {
+          "@type": "Person",
+          "name": "Wall E"
+        },
+        {
+          "@type": "Person",
+          "name": "Joachimiak MP"
+        },
+        {
+          "@type": "Person",
+          "name": "Hunter LE"
+        },
+        {
+          "@type": "Person",
+          "name": "Lozupone CA"
+        }
+      ],
+      "datePublished": "2024-01-01",
+      "fromPMID": true,
+      "identifier": "PMID:38638909",
+      "journalName": "Frontiers in microbiology",
+      "name": "Integrating biological knowledge for mechanistic inference in the host-associated microbiome.",
+      "pmid": "38638909",
+      "type": "ScholarlyArticle",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38638909/"
+    }
+  ],
+  "collectionSize": [
+    {
+      "@type": "PropertyValue",
+      "minValue": 97334,
+      "unitText": "strains"
+    },
+    {
+      "@type": "PropertyValue",
+      "minValue": 20433,
+      "unitText": "species"
+    },
+    {
+      "@type": "PropertyValue",
+      "minValue": 26131,
+      "unitText": "16S sequence accessions"
+    }
+  ],
+  "collectionType": "Knowledge Base",
+  "conditionsOfAccess": "Open",
+  "date": "2025-05-14",
+  "dateCreated": "2024-07-23",
+  "dateModified": "2025-05-14",
+  "datePublished": "2013-09-01",
+  "description": "The Bacterial Diversity Metadatabase BacDive is the worldwide largest database for standardized bacterial phenotypic information. Its mission is to mobilize research data on strain level from internal files in culture collections (e.g. CABI, CIP, CCUG, DSMZ) as well as from primary literature and make it freely accessible. Today BacDive offers data on 93,254 bacterial and archaeal strains, including 19,313 type strains and thereby covers approx. 90% of the validly described species. Within over 600 data fields the topics taxonomy, morphology, physiology, origin, molecular data, and cultivation conditions are covered. The database offers systematic access to phenotypic data. BacDive thereby enables queries like \"show me all strains that grow under certain conditions\u201d by using the Advanced search or queries like \u201cshow me all strains isolated from a marine environment\u201d by using the Isolation source search. With currently 15,357 API\u00ae tests for 27,634 strains, BacDive also offers the worldwide largest API\u00ae test collection, which can be queried using the API test finder tool.",
+  "funding": [
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "alternateName": "BMBF",
+        "name": "Federal Ministry of Education and Research"
+      },
+      "identifier": "01 LI 1001 C"
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "alternateName": "GFBio",
+        "name": "German Federation for Biological Data"
+      },
+      "identifier": "OV 20/20\u20131"
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "alternateName": "BMBF",
+        "name": "Federal Ministry of Education and Research"
+      },
+      "identifier": "NBI021A539C"
+    },
+    {
+      "@type": "MonetaryGrant",
+      "funder": {
+        "@type": "Organization",
+        "alternateName": "DFG",
+        "name": "Deutsche Forschungsgemeinschaft"
+      },
+      "identifier": "unknown"
+    }
+  ],
+  "genre": "IID",
+  "hasAPI": true,
+  "hasDownload": "Record-level",
+  "hasPart": [
+    {
+      "@type": "ComputationalTool",
+      "name": "Biom\u00e9rieux API test finder",
+      "url": "https://bacdive.dsmz.de/api-test-finder"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Tutorials",
+      "url": "https://bacdive.dsmz.de/tutorials#apiintro"
+    },
+    {
+      "@type": "Collection",
+      "name": "Isolation Sources",
+      "url": "https://bacdive.dsmz.de/isolation-sources"
+    }
+  ],
+  "healthCondition": [
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "HSAN",
+        "hereditary sensory peripheral neuropathy",
+        "indifference to pain, Congenital, autosomal recessive",
+        "CIP",
+        "hereditary sensory neuropathy",
+        "congenital pain insensitivity",
+        "hereditary sensory and autonomic neuropathy",
+        "congenital insensitivity to pain"
+      ],
+      "curatedBy": {
+        "dateModified": "2026-02-26",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "fromPMID": true,
+      "identifier": "0015364",
+      "inDefinedTermSet": "MONDO",
+      "isCurated": true,
+      "name": "hereditary sensory and autonomic neuropathy",
+      "originalName": "hereditary sensory and autonomic neuropathy",
+      "url": "http://purl.obolibrary.org/obo/MONDO_0015364"
+    },
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "bacterial infectious disease",
+        "Bacteria disease or disorder",
+        "Bacteria caused disease or disorder",
+        "Bacteria infectious disease",
+        "bacterial disorder",
+        "bacterial infection",
+        "infection, bacterial",
+        "bacterial disease"
+      ],
+      "curatedBy": {
+        "dateModified": "2026-02-26",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "identifier": "0005113",
+      "inDefinedTermSet": "MONDO",
+      "isCurated": true,
+      "name": "bacterial infectious disease",
+      "originalName": "bacterial infectious disease",
+      "url": "http://purl.obolibrary.org/obo/MONDO_0005113"
+    }
+  ],
+  "identifier": "https://bacdive.dsmz.de/",
+  "inLanguage": [
+    {
+      "@type": "Language",
+      "name": "English"
+    }
+  ],
+  "includedInDataCatalog": [
+    {
+      "@type": "DataCatalog",
+      "archivedAt": "https://discovery.biothings.io/resource/e9c5ccfa4872afe2",
+      "name": "Data Discovery Engine",
+      "url": "https://discovery.biothings.io/",
+      "versionDate": "2026-02-28"
+    }
+  ],
+  "infectiousAgent": [
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "prokaryotes",
+        "Archaea Woese et al. 2024",
+        "Procaryotae",
+        "\"Archaebiota\" Luketa 2012",
+        "Monera",
+        "\"Archaea\" Woese et al. 1990",
+        "prokaryote",
+        "Metabacteria",
+        "archaea",
+        "Prokaryotae",
+        "\"Archaebacteria\" (sic) Woese and Fox 1977",
+        "Mendosicutes",
+        "Archaebiota",
+        "Prokaryota",
+        "Archaebacteria"
+      ],
+      "classification": "infectiousAgent",
+      "curatedBy": {
+        "dateModified": "2026-02-26",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "displayName": "Archaea",
+      "identifier": "2157",
+      "inDefinedTermSet": "UniProt",
+      "isCurated": true,
+      "name": "Archaea",
+      "originalName": "Archaea",
+      "url": "https://www.uniprot.org/taxonomy/2157"
+    },
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "bacteria",
+        "prokaryotes",
+        "eubacteria",
+        "Procaryotae",
+        "Monera",
+        "Bacteria Woese et al. 2024",
+        "prokaryote",
+        "Bacteriobiota",
+        "Bacteria (ex Cavalier-Smith 1987)",
+        "Prokaryotae",
+        "\"Bacteriobiota\" Luketa 2012",
+        "\"Bacteria\" Cavalier-Smith 1987",
+        "Prokaryota"
+      ],
+      "classification": "infectiousAgent",
+      "commonName": "bacteria",
+      "curatedBy": {
+        "dateModified": "2026-02-26",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "displayName": "bacteria | Bacteria",
+      "identifier": "2",
+      "inDefinedTermSet": "UniProt",
+      "isCurated": true,
+      "name": "Bacteria",
+      "originalName": "Bacteria",
+      "url": "https://www.uniprot.org/taxonomy/2"
+    }
+  ],
+  "isAccessibleForFree": true,
+  "isBasedOn": [
+    {
+      "@type": "ResourceCatalog",
+      "name": "BRENDA",
+      "url": "http://www.brenda-enzymes.org/"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "NCBI Taxonomy",
+      "url": "https://www.ncbi.nlm.nih.gov/taxonomy"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "NCBI GenBank",
+      "url": "https://www.ncbi.nlm.nih.gov/genbank/"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "PATRIC (BV-BRC)",
+      "url": "https://www.bv-brc.org/"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "European Nucleotide Archive",
+      "url": "https://www.ebi.ac.uk/ena/browser/"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "SILVA",
+      "url": "https://www.arb-silva.de/"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "ChEBI",
+      "url": "http://www.ebi.ac.uk/chebi/"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "ComputationalTool",
+      "name": "BacDive API Python package",
+      "url": "https://pypi.org/project/bacdive/"
+    },
+    {
+      "@type": "ComputationalTool",
+      "name": "BacDive API R package",
+      "url": "https://r-forge.r-project.org/R/?group_id=1573"
+    }
+  ],
+  "keywords": [
+    "single strain cell culture",
+    "pathogenic disposition",
+    "curated information"
+  ],
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "measurementTechnique": [
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "BAO",
+      "isCurated": true,
+      "name": "morphology assessment method",
+      "url": "http://www.bioassayontology.org/bao#BAO_0000448"
+    },
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "Culture",
+        "Culture Procedure",
+        "MICROBIAL CULTURE",
+        "Microbial Culture Procedure"
+      ],
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "NCIT",
+      "isCurated": true,
+      "name": "Microbial Culture Procedure",
+      "url": "http://purl.obolibrary.org/obo/NCIT_C25300"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "ECO",
+      "isCurated": true,
+      "name": "metabolite profiling assay",
+      "url": "http://purl.obolibrary.org/obo/OBI_0000366"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "OBI",
+      "isCurated": true,
+      "name": "16s ribosomal gene sequencing assay",
+      "url": "http://purl.obolibrary.org/obo/OBI_0002763"
+    }
+  ],
+  "name": "BacDive",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q25349390"
+  ],
+  "sdPublisher": [
+    {
+      "@type": "ResourceCatalog",
+      "name": "Fairsharing.org",
+      "url": "https://fairsharing.org/FAIRsharing.aSszvY"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "re3data.org",
+      "url": "https://www.re3data.org/repository/r3d100013060"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "bio.tools",
+      "url": "https://bio.tools/bacdive"
+    },
+    {
+      "@type": "ResourceCatalog",
+      "name": "Database Commons",
+      "url": "https://ngdc.cncb.ac.cn/databasecommons/database/id/231"
+    },
+    {
+      "@type": "DataCatalog",
+      "name": "Data Discovery Engine",
+      "url": "https://discovery.biothings.io/portal/nde"
+    }
+  ],
+  "topicCategory": {
+    "@type": "DefinedTerm",
+    "url": [
+      "http://edamontology.org/topic_0637",
+      "http://edamontology.org/topic_0622",
+      "http://edamontology.org/topic_3050",
+      "http://edamontology.org/topic_3301"
+    ]
+  },
+  "url": "https://bacdive.dsmz.de/",
+  "usageInfo": {
+    "@type": "CreativeWork",
+    "name": "Conditions of use",
+    "url": "https://bacdive.dsmz.de/about"
+  },
+  "variableMeasured": [
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "EDAM",
+      "isCurated": true,
+      "name": "Morphology parameter",
+      "url": "http://edamontology.org/data_3723"
+    },
+    {
+      "@type": "DefinedTerm",
+      "alternateName": [
+        "GrowthCondition"
+      ],
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "EFO",
+      "isCurated": true,
+      "name": "growth condition",
+      "url": "http://www.ebi.ac.uk/efo/EFO_0000523"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "BAO",
+      "isCurated": true,
+      "name": "antibiotic resistance",
+      "url": "http://www.bioassayontology.org/bao#BAO_0000099"
+    },
+    {
+      "@type": "DefinedTerm",
+      "curatedBy": {
+        "dateModified": "2026-02-28",
+        "name": "Data Discovery Engine",
+        "url": "https://discovery.biothings.io/"
+      },
+      "inDefinedTermSet": "GENEPIO",
+      "isCurated": true,
+      "name": "diversity",
+      "url": "http://purl.obolibrary.org/obo/NCIT_C62263"
+    }
+  ]
+}
