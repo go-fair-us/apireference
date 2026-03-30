@@ -1,0 +1,73 @@
+direction: right
+
+
+classes: {
+coreclass: {
+    width: 300
+            height: 150
+               style: {
+                     stroke-width: 0
+                     font-size: 32
+                    fill: "#44C7B1"
+                    shadow: true
+                    border-radius: 5
+               }
+      }
+propclass: {
+    width: 300
+        height: 150
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+      tallpropclass: {
+    width: 300
+    height: 600
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+}
+d.class: propclass
+api.class: propclass
+ai.class: propclass
+aiprods.class: propclass
+
+d: Data {
+  ds: Data Source
+  *.class: coreclass
+}
+
+api: API {
+  tool: Query Code
+  openapi: OpenAPI \n Descriptor
+  *.class: coreclass
+}
+
+ai: AI {
+  cli: AI Coding Agent
+    *.class: coreclass
+}
+
+aiprods: AI generated products {
+  code: Client Code
+  repl: Interactive UI
+      *.class: coreclass
+
+}
+
+d.ds <-> api.tool
+api.openapi <-> ai.cli
+ai.cli -> aiprods.code
+ai.cli -> aiprods.repl
+
+api.tool <- aiprods.code
+api.tool <- aiprods.repl

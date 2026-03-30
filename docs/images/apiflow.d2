@@ -1,0 +1,129 @@
+direction: right
+
+
+classes: {
+coreclass: {
+    width: 300
+            height: 150
+               style: {
+                     stroke-width: 0
+                     font-size: 32
+                    fill: "#44C7B1"
+                    shadow: true
+                    border-radius: 5
+               }
+      }
+propclass: {
+    width: 300
+        height: 150
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+      tallpropclass: {
+    width: 300
+    height: 600
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+}
+
+r.class: propclass
+h.class: propclass
+os.class: propclass
+ds.class: propclass
+c.class: tallpropclass
+
+
+r: Resource {
+   do: Digital Object
+   dom: Digital Object\n Metadata
+   *.class: coreclass
+}
+
+h: HTML \n embedded metadata
+
+os: Object Server\n http, ftp, s3
+
+ds: Data Stack {
+    db: Data Base\n SQL, Graph, etc.
+    wapi: Web API\n Service
+    db <-> wapi{
+  style: {
+    font-size: 36
+    stroke-width: 4
+  }
+}
+    *.class: coreclass
+}
+
+
+c: Consumer
+
+r.dom -> h{
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+r.dom -> os{
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+r.dom -> ds.db{
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+
+h <- c: GET {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+h -> c: Response with HTML and embedded metadata \n or \n  Response with metadata via content negotiation {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+
+
+os <- c: GET {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+os -> c: Response with metadata object {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+
+ds.wapi <- c: GET or POST {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
+ds.wapi -> c: Response with metadata object {
+  style: {
+    font-size: 36
+    stroke-width: 6
+  }
+}
