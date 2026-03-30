@@ -4,7 +4,7 @@ import json
 
 def get_dataset(dataset_id):
     """
-    Retrieves a dataset from the Provisium API.
+    Retrieves a dataset from the Provisium demo API.
 
     Args:
         dataset_id: The ID of the dataset to retrieve.
@@ -12,7 +12,7 @@ def get_dataset(dataset_id):
     Returns:
         The dataset as a JSON object, or None if an error occurs.
     """
-    url = f"https://provisium.io/api/datasets/{dataset_id}"
+    url = f"http://127.0.0.1:8080/id/dataset/{dataset_id}"
     try:
         response = requests.get(url)
         response.raise_for_status()  # Raise an exception for bad status codes
