@@ -29,8 +29,8 @@ For standardized machine access to metadata, APIs should expose metadata element
 
 Examples of the JSON-LD encoding can be seen in:
 
-* docs/example1.json
-* docs/example2.json
+* [example1.json](docs/resources_data/example1.json)
+* [example2.json](docs/resources_data/example2.json)
 
 
 ### Impact
@@ -53,6 +53,7 @@ uv pip install -r requirements.txt
 
 ## Index
 
+* Slide presentation URL index
 
 * What does a simple server look like?  This page describes a basic server implementation using Flask.  [sever hello world](./code/server/README.md)
 * What do clients look like?  This directory holds some
