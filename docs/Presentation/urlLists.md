@@ -42,7 +42,7 @@
 
   * **Cool URIs (W3C):** [https://www.w3.org/Provider/Style/URI](https://www.w3.org/Provider/Style/URI)
   * **Cool URIs for the Semantic Web:** [https://www.w3.org/TR/cooluris/](https://www.w3.org/TR/cooluris/)
-  * **Hash URI example:** [http://example.com/about\#alice](http://example.com/about#alice)
+  * **Hash URI example:** [http://example.com/about\#alice](http://example.com/about#alice)  
 
 ### **Slide 14: APIs Need Versioning**
 
@@ -70,8 +70,8 @@
 ### **Slide 21: NIAID Data Ecosystem Discovery Portal Use of APIs**
 
   * **NDE Portal:** [https://data.niaid.nih.gov/](https://data.niaid.nih.gov/)
-  * **NDE Portal Search Result:** [https://data.niaid.nih.gov/search?q=hasAPI%3Atrue\&filters=%28date%3A%5B%222000-01-01%22+TO+%222026-12-31%22%5D%29](https://data.niaid.nih.gov/search?q=hasAPI%3Atrue%26filters=%28date%3A%5B%222000-01-01%22+TO+%222026-12-31%22%5D%29)
-  * **API Query URL:** [https://api.data.niaid.nih.gov/v1/query?q=hasAPI%3Atrue\&facet\_size=10\&fetch\_all=true](https://www.google.com/search?q=https://api.data.niaid.nih.gov/v1/query%3Fq%3DhasAPI%253Atrue%26facet_size%3D10%26fetch_all%3Dtrue)
+  * **NDE Portal Search Result:** [https://data.niaid.nih.gov/search?q=hasAPI%3Atrue\&filters=%28date%3A%5B%222000-01-01%22+TO+%222026-12-31%22%5D%29](https://data.niaid.nih.gov/search?q=hasAPI%3Atrue&filters=%28date%3A%5B%222000-01-01%22+TO+%222026-12-31%22%5D%29)
+  * **API Query URL:** [https://api.data.niaid.nih.gov/v1/query?q=hasAPI%3Atrue\&facet\_size=10\&fetch\_all=true](https://api.data.niaid.nih.gov/v1/query?q=hasAPI%3Atrue&facet_size=10&fetch_all=true)
 
 ### **Slide 22: APIs in NIAID**
 
@@ -82,7 +82,7 @@
 
 ### **Slide 23: AI and APIs: The Model Context Protocol (MCP)**
 
-  * **MCP Details (GitHub):** [https://github.com/go-fair-us/apireference/blob/master/code/mcp/README.md](https://github.com/go-fair-us/apireference/blob/master/code/mcp/README.md)
+  * **MCP Details (GitHub):** [https://github.com/go-fair-us/apireference/tree/master/docs/mcp](https://github.com/go-fair-us/apireference/tree/master/docs/mcp)
 
 ### **Slide 24: MCP? Or, just APIs with descriptions or CLIs?**
 
