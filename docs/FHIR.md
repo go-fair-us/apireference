@@ -1,4 +1,4 @@
-**Appendix A: FHIR (Fast Healthcare Interoperability Resources) in the NIAID Ecosystem**
+# **FHIR (Fast Healthcare Interoperability Resources) in the NIAID Ecosystem**
 
 This appendix expands on Module 2 (FAIR Principles and FAIR APIs) and Module 4 (Review of Existing APIs) by focusing on **FHIR**, a widely adopted global standard that functions as a highly structured, RESTful API framework. FHIR is especially relevant for clinical, trial, and immunology data within NIAID-funded repositories and aligns directly with NIAID’s goals for interoperability and the NIH Data Management & Sharing Policy.
 

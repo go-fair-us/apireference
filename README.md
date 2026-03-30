@@ -4,7 +4,7 @@
 
 This repo contains implementation details based on the NIH/NIAID Blueprint document titled: [Blueprint to Connect Data Across the NIAID Data Ecosystem](https://pubweb-prod.niaid.nih.gov/research/data-blueprint).
 
-The goal is to provide a reference implementation for those interested in leveraging the guidance in the Blueprint.
+The goal is to provide a reference implementation for those interested in leveraging the guidance in the Blueprint related to APIs.
 
 For reference, the key elements of the Blueprint include:
 
@@ -37,37 +37,6 @@ Examples of the JSON-LD encoding can be seen in:
 
 The minimal API specification in the NIAID Blueprint would significantly improve the NIAID data ecosystem as a robust, scalable method for sharing metadata about NIAID digital objects. For example, the API standard would facilitate the creation of metadata catalogs and resource graphs, enhance the NIAID Data Ecosystem Discovery Portal, and enable integration with other cataloging services and data-driven workflows. The result would be a more sustainable, transparent, and user-friendly data architecture, empowering researchers to leverage NIAID data more effectively.
 
-## Audience
-
-There are potentially several paths and entry points for implementing the API recommendations.
-
-We will want to accommodate different levels of expertise and provide guidance for each path.  The following diagram illustrates the different paths and entry points.
-
-Note shown here is the concept of MCP that should be addressed as an additional concept.
-
-```mermaid
-flowchart TD
-    Start1[New to APIs in general] --> Mid1[Overview of various API \n services and clients]
-    Start2[Consumer of APIs] --> Mid1
-
-    Mid1 --> Step2a[Deployment Approaches]
-    Mid2[Experienced in API DevOps] --> Step2b[Validation tools]
-
-    Step2a --> Step3[Example Operations]
-    Step3 --> Step2b
-    
-    Step2b --> Final[Shared Blueprint Alignment ]
-    
-```
-
-
-
-
-## Approaches
-
-### API Implementation
-
-The API implementation approach should follow the guidelines outlined in the Blueprint, with a focus on providing a standardized and machine-readable interface for accessing metadata. This includes adhering to the JSON-LD encoding and IRI structure recommendations, as well as using the HTTP GET method for metadata retrieval. API documentation should be provided in OpenAPI/Swagger format for ease of use and machine-readability.
 
 ## Repository Setup
 

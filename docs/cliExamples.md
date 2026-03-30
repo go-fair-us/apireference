@@ -4,7 +4,7 @@
 This document has some example CLI commands, mostly in curl.  They demonstrate some of the public
 APIs that are available for use.  
 
-## Nominatim: GeoCoding: Address to Coodinates
+## Nominatim: GeoCoding: Address to Coordinates
 
 
 ```bash
