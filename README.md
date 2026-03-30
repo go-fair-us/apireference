@@ -53,7 +53,12 @@ uv pip install -r requirements.txt
 
 ## Index
 
-* Slide presentation URL index
+### Presentation Resources
+
+[Slide presentation URL index](docs/Presentation/README.md)
+
+
+### Other references
 
 * What does a simple server look like?  This page describes a basic server implementation using Flask.  [sever hello world](./code/server/README.md)
 * What do clients look like?  This directory holds some

@@ -1,0 +1,60 @@
+direction: right
+
+
+classes: {
+coreclass: {
+    width: 200
+            height: 75
+               style: {
+                     stroke-width: 0
+                     font-size: 32
+                    fill: "#44C7B1"
+                    shadow: true
+                    border-radius: 5
+               }
+      }
+propclass: {
+    width: 300
+        height: 150
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+      tallpropclass: {
+    width: 200
+    height: 200
+               style: {
+                     stroke-width: 1
+                     font-size: 32
+                     fill: honeydew
+                    shadow: false
+                    border-radius: 0
+               }
+      }
+}
+apis.class: propclass
+person.class: tallpropclass
+portal.class: tallpropclass
+
+
+person: traveler
+person.shape: Person
+
+portal: Kayak
+portal.shape: Circle
+
+
+person <-> portal
+portal <-> apis
+
+apis: APIs from Airlines {
+  ua: United
+  d: Delta
+  a: American
+  jb: Jet Blue
+     *.class: coreclass
+}
