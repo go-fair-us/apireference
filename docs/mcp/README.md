@@ -78,16 +78,24 @@ This is especially useful in tools like Claude Desktop, IDEs (VS Code, Cursor), 
 
 While it is fair to think of MCP and APIs by convention, there are fundamental differences in their design and purpose.  So while MCP is needed in all cases by all services, if the functionality is already provided by an API, MCP can still offer additional benefits.
 
-* OpenAPI describes; MCP prescribes. You can't fix inconsistency by documenting it better—you need enforcement at the protocol level.
+* OpenAPI describes; MCP prescribes (i.e., defines a convention). If your primary users are AI agents or autonomous workflows, you likely need protocol level enforcement.
+* MCP is well aligned for cases where tool selection is based on natural language and involves multiple tools. It provides a structured way to describe and execute tools, making it easier to manage and integrate with AI agents and workflows.
 * Retrofitting fails at scale. OpenAPI would need to standardize transport, mandate single-location inputs, require specific schemas, add bidirectional primitives—essentially becoming a different protocol.
 * The ecosystem problem. Even if OpenAPI added these features tomorrow, millions of existing APIs wouldn't adopt them. MCP starts fresh with AI-first principles.
 
 Unlike static API specs, MCP enables agents to query capabilities dynamically, allowing automatic adaptation without new client code.
 
-MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs.
+MCP supports first-class bidirectional flows (e.g., progress updates, clarifications), which are not standard in APIs and important for interaction with AI agents and autonomous workflows.
+
+### When to Potentially Skip MCP and Improve Your API Instead
+
+* Your main users are mostly human developers, scripts, or non-agentic applications.
+* Interactions are mostly simple, stateless, or deterministic (one-shot requests) not complex multistep flows
+* You have limited resources and want to avoid any extra maintenance or security concerns.
+* AI usage is experimental or secondary, in this case a solid OpenAPI/Swagger spec + CLI (that agents can call via shell) may be enough.
 
 
-## Security issues (placeholder text)
+## Security issues 
 
 Here are some of the primary security concerns with MCP, drawn from analyses of its implementation in AI/agentic systems (including NIAID-style ecosystems):
 
