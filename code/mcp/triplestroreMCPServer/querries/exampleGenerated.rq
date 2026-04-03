@@ -1,0 +1,10 @@
+SELECT DISTINCT ?dataset ?dname WHERE {
+    ?dataset a <https://schema.org/Dataset> .
+    ?dataset <https://schema.org/name> ?dname .
+    ?dataset <https://schema.org/spatialCoverage> ?spatial .
+    ?spatial <https://schema.org/name> ?sname .
+    FILTER (CONTAINS(LCASE(?sname), "north atlantic"))
+}
+LIMIT 50
+
+
