@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Dataset: Tuberculosis Chest X-Ray Image Collection</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; line-height: 1.6; }
+        .banner { background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+        .banner strong { color: #856404; }
+        h1 { color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 0.5rem; }
+        .metadata { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .metadata dt { font-weight: bold; color: #495057; margin-top: 1rem; }
+        .metadata dd { margin-left: 0; color: #212529; }
+        .badge { display: inline-block; background: #6f42c1; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; margin-right: 0.5rem; }
+        a { color: #0066cc; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .stat-box { background: #e9ecef; padding: 1rem; border-radius: 8px; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #1a5276; }
+        .stat-label { font-size: 0.875rem; color: #6c757d; }
+    </style>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/imaging-003",
+    "name": "Tuberculosis Chest X-Ray Image Collection for Machine Learning",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains anonymized chest X-ray images with radiologist annotations for tuberculosis detection. Designed for training and validating machine learning models for automated TB screening.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.imaging.003"
+    },
+    "url": "https://example.org/datasets/imaging-003",
+    "keywords": ["tuberculosis", "chest X-ray", "medical imaging", "machine learning", "deep learning", "computer-aided diagnosis"],
+    "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Medical Imaging Consortium",
+        "url": "https://example.org/consortia/medical-imaging"
+    },
+    "contributor": [
+        {
+            "@type": "Organization",
+            "name": "Example University Hospital"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example AI Research Lab"
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Open Science Repository"
+    },
+    "datePublished": "2023-11-10",
+    "dateModified": "2024-02-28",
+    "version": "2.1",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global (multi-site collection)"
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/zip",
+            "contentUrl": "https://example.org/datasets/imaging-003/images.zip",
+            "description": "Chest X-ray images in PNG format"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://example.org/datasets/imaging-003/annotations.json",
+            "description": "Radiologist annotations and labels"
+        }
+    ],
+    "measurementTechnique": "Digital chest radiography",
+    "variableMeasured": ["TB classification", "Lesion location", "Severity score", "Patient demographics"],
+    "size": "12,500 images",
+    "isAccessibleForFree": true
+}
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <strong>⚠️ EXAMPLE DATA - NOT REAL</strong><br>
+        This is a fictitious dataset created for demonstration purposes only. All images, annotations, and organizations described are fake.
+    </div>
+
+    <h1>Tuberculosis Chest X-Ray Image Collection for Machine Learning</h1>
+
+    <p>This fictitious dataset contains anonymized chest X-ray images with radiologist annotations for tuberculosis detection. Designed for training and validating machine learning models for automated TB screening.</p>
+
+    <div class="stats">
+        <div class="stat-box">
+            <div class="stat-number">12,500</div>
+            <div class="stat-label">X-Ray Images</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">8</div>
+            <div class="stat-label">Contributing Sites</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">v2.1</div>
+            <div class="stat-label">Current Version</div>
+        </div>
+    </div>
+
+    <div class="metadata">
+        <dl>
+            <dt>Identifier</dt>
+            <dd>DOI: 10.99999/example.imaging.003</dd>
+
+            <dt>Creator</dt>
+            <dd>Example Medical Imaging Consortium</dd>
+
+            <dt>Contributors</dt>
+            <dd>
+                Example University Hospital<br>
+                Example AI Research Lab
+            </dd>
+
+            <dt>Date Published</dt>
+            <dd>November 10, 2023 (Updated: February 28, 2024)</dd>
+
+            <dt>Geographic Coverage</dt>
+            <dd>Global (multi-site collection)</dd>
+
+            <dt>License</dt>
+            <dd><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></dd>
+
+            <dt>Keywords</dt>
+            <dd>
+                <span class="badge">tuberculosis</span>
+                <span class="badge">chest X-ray</span>
+                <span class="badge">machine learning</span>
+                <span class="badge">deep learning</span>
+                <span class="badge">CAD</span>
+            </dd>
+
+            <dt>Measurement Technique</dt>
+            <dd>Digital chest radiography</dd>
+
+            <dt>Downloads</dt>
+            <dd>
+                <a href="#">images.zip</a> (PNG format, ~15 GB)<br>
+                <a href="#">annotations.json</a> (Labels and metadata)
+            </dd>
+        </dl>
+    </div>
+
+    <h2>Dataset Structure</h2>
+    <ul>
+        <li><strong>TB-Positive:</strong> 4,200 images with confirmed TB findings</li>
+        <li><strong>TB-Negative:</strong> 6,800 normal chest X-rays</li>
+        <li><strong>Uncertain:</strong> 1,500 images requiring clinical correlation</li>
+    </ul>
+
+    <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.875rem;">
+        <p>This page contains embedded JSON-LD metadata (view page source to see). Created as a demonstration for the NIAID API Reference Implementation.</p>
+    </footer>
+</body>
+</html>

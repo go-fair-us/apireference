@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Dataset: Influenza A Genomic Sequences</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; line-height: 1.6; }
+        .banner { background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+        .banner strong { color: #856404; }
+        h1 { color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 0.5rem; }
+        .metadata { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .metadata dt { font-weight: bold; color: #495057; margin-top: 1rem; }
+        .metadata dd { margin-left: 0; color: #212529; }
+        .badge { display: inline-block; background: #17a2b8; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; margin-right: 0.5rem; }
+        a { color: #0066cc; }
+    </style>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/genomics-001",
+    "name": "Influenza A Genomic Sequences - Seasonal Surveillance 2023",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains whole genome sequences of Influenza A virus samples collected during a simulated seasonal surveillance program. Includes H1N1 and H3N2 subtypes from multiple geographic regions.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.genomics.001"
+    },
+    "url": "https://example.org/datasets/genomics-001",
+    "keywords": ["influenza", "genomics", "whole genome sequencing", "H1N1", "H3N2", "surveillance"],
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Viral Genomics Laboratory",
+        "url": "https://example.org/labs/viral-genomics"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Data Repository",
+        "url": "https://example.org"
+    },
+    "datePublished": "2024-03-15",
+    "dateModified": "2024-06-01",
+    "temporalCoverage": "2023-01-01/2023-12-31",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "North America"
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-fasta",
+            "contentUrl": "https://example.org/datasets/genomics-001/sequences.fasta"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/genomics-001/metadata.csv"
+        }
+    ],
+    "measurementTechnique": "Illumina NovaSeq 6000 whole genome sequencing",
+    "variableMeasured": ["nucleotide sequence", "viral subtype", "collection date", "geographic origin"]
+}
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <strong>⚠️ EXAMPLE DATA - NOT REAL</strong><br>
+        This is a fictitious dataset created for demonstration purposes only. All data, identifiers, and organizations are fake.
+    </div>
+
+    <h1>Influenza A Genomic Sequences - Seasonal Surveillance 2023</h1>
+
+    <p>This fictitious dataset contains whole genome sequences of Influenza A virus samples collected during a simulated seasonal surveillance program. Includes H1N1 and H3N2 subtypes from multiple geographic regions.</p>
+
+    <div class="metadata">
+        <dl>
+            <dt>Identifier</dt>
+            <dd>DOI: 10.99999/example.genomics.001</dd>
+
+            <dt>Creator</dt>
+            <dd>Example Viral Genomics Laboratory</dd>
+
+            <dt>Publisher</dt>
+            <dd>Example Data Repository</dd>
+
+            <dt>Date Published</dt>
+            <dd>March 15, 2024</dd>
+
+            <dt>Temporal Coverage</dt>
+            <dd>January 1, 2023 - December 31, 2023</dd>
+
+            <dt>Spatial Coverage</dt>
+            <dd>North America</dd>
+
+            <dt>License</dt>
+            <dd><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></dd>
+
+            <dt>Keywords</dt>
+            <dd>
+                <span class="badge">influenza</span>
+                <span class="badge">genomics</span>
+                <span class="badge">H1N1</span>
+                <span class="badge">H3N2</span>
+                <span class="badge">surveillance</span>
+            </dd>
+
+            <dt>Measurement Technique</dt>
+            <dd>Illumina NovaSeq 6000 whole genome sequencing</dd>
+
+            <dt>Downloads</dt>
+            <dd>
+                <a href="#">sequences.fasta</a> (FASTA format)<br>
+                <a href="#">metadata.csv</a> (CSV format)
+            </dd>
+        </dl>
+    </div>
+
+    <h2>About This Dataset</h2>
+    <p>This example dataset demonstrates how a genomics dataset landing page might be structured with embedded JSON-LD metadata following schema.org conventions.</p>
+
+    <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.875rem;">
+        <p>This page contains embedded JSON-LD metadata (view page source to see). Created as a demonstration for the NIAID API Reference Implementation.</p>
+    </footer>
+</body>
+</html>

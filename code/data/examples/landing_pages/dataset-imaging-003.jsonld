@@ -1,0 +1,59 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/imaging-003",
+    "name": "Tuberculosis Chest X-Ray Image Collection for Machine Learning",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains anonymized chest X-ray images with radiologist annotations for tuberculosis detection. Designed for training and validating machine learning models for automated TB screening.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.imaging.003"
+    },
+    "url": "https://example.org/datasets/imaging-003",
+    "keywords": ["tuberculosis", "chest X-ray", "medical imaging", "machine learning", "deep learning", "computer-aided diagnosis"],
+    "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Medical Imaging Consortium",
+        "url": "https://example.org/consortia/medical-imaging"
+    },
+    "contributor": [
+        {
+            "@type": "Organization",
+            "name": "Example University Hospital"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example AI Research Lab"
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Open Science Repository"
+    },
+    "datePublished": "2023-11-10",
+    "dateModified": "2024-02-28",
+    "version": "2.1",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "Global (multi-site collection)"
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/zip",
+            "contentUrl": "https://example.org/datasets/imaging-003/images.zip",
+            "description": "Chest X-ray images in PNG format"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://example.org/datasets/imaging-003/annotations.json",
+            "description": "Radiologist annotations and labels"
+        }
+    ],
+    "measurementTechnique": "Digital chest radiography",
+    "variableMeasured": ["TB classification", "Lesion location", "Severity score", "Patient demographics"],
+    "size": "12,500 images",
+    "isAccessibleForFree": true
+}

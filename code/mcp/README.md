@@ -64,6 +64,10 @@ https://itnext.io/build-a-mcp-server-using-go-to-connect-ai-agents-with-database
 https://modelcontextprotocol.io/docs/tools/inspector
 
 
+## French National Data MCP
+
+A nice example to look over.  https://github.com/datagouv/datagouv-mcp
+
 ## Using the Bash Test Script
 
 To use the bash test script:

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "bioportal_mcp": {
+      "type": "remote",
+      "url": "https://bioportal.fastmcp.app/mcp",
+      "enabled": true
+    },
+    "clinicaltrials_mcp": {
+      "type": "remote",
+      "url": "https://clinicaltrials.caseyjhand.com/mcp",
+      "enabled": true
+    },
+    "biothings_mcp": {
+      "type": "remote",
+      "url": "https://biothings.longevity-genie.info/mcp",
+      "enabled": true
+    },
+    "gget_mcp": {
+      "type": "remote",
+      "url": "https://gget-mcp.longevity-genie.info/mcp",
+      "enabled": true
+    },
+    "opengenes_mcp": {
+      "type": "remote",
+      "url": "https://opengenes-mcp.longevity-genie.info/mcp",
+      "enabled": true
+    },
+    "synergy_age_mcp": {
+      "type": "remote",
+      "url": "https://synergy-age-mcp.longevity-genie.info/mcp",
+      "enabled": true
+    },
+    "biocontext_kb_mcp": {
+      "type": "remote",
+      "url": "https://biocontext-kb.fastmcp.app/mcp",
+      "enabled": true
+    }
+  }
+}

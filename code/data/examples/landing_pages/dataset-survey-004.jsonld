@@ -1,0 +1,74 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/survey-004",
+    "name": "Cross-Sectional Dengue Seroprevalence Survey - Urban Southeast Asia",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains results from a simulated population-based seroprevalence survey measuring dengue virus antibodies across age groups in urban settings. Includes demographic data, serological results, and risk factor analysis.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.survey.004"
+    },
+    "url": "https://example.org/datasets/survey-004",
+    "keywords": ["dengue", "seroprevalence", "epidemiology", "survey", "arbovirus", "Southeast Asia", "urban health"],
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Epidemiology Research Center",
+        "url": "https://example.org/centers/epidemiology"
+    },
+    "funder": [
+        {
+            "@type": "Organization",
+            "name": "Example National Health Ministry"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example International Health Organization"
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Public Health Data Repository"
+    },
+    "datePublished": "2024-05-01",
+    "temporalCoverage": "2023-06-01/2023-08-31",
+    "spatialCoverage": [
+        {
+            "@type": "Place",
+            "name": "Bangkok, Thailand",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 13.7563,
+                "longitude": 100.5018
+            }
+        },
+        {
+            "@type": "Place",
+            "name": "Ho Chi Minh City, Vietnam",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 10.8231,
+                "longitude": 106.6297
+            }
+        }
+    ],
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/survey-004/survey_data.csv"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-stata",
+            "contentUrl": "https://example.org/datasets/survey-004/survey_data.dta"
+        }
+    ],
+    "measurementTechnique": ["ELISA for IgG detection", "Plaque reduction neutralization test (PRNT)"],
+    "variableMeasured": ["Dengue IgG seropositivity", "Serotype-specific antibodies", "Age", "Sex", "Urban district", "Socioeconomic indicators"],
+    "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "Example Global Health Data Exchange"
+    }
+}

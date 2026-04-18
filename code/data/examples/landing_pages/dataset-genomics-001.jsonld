@@ -1,0 +1,46 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/genomics-001",
+    "name": "Influenza A Genomic Sequences - Seasonal Surveillance 2023",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains whole genome sequences of Influenza A virus samples collected during a simulated seasonal surveillance program. Includes H1N1 and H3N2 subtypes from multiple geographic regions.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.genomics.001"
+    },
+    "url": "https://example.org/datasets/genomics-001",
+    "keywords": ["influenza", "genomics", "whole genome sequencing", "H1N1", "H3N2", "surveillance"],
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Viral Genomics Laboratory",
+        "url": "https://example.org/labs/viral-genomics"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Data Repository",
+        "url": "https://example.org"
+    },
+    "datePublished": "2024-03-15",
+    "dateModified": "2024-06-01",
+    "temporalCoverage": "2023-01-01/2023-12-31",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "North America"
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-fasta",
+            "contentUrl": "https://example.org/datasets/genomics-001/sequences.fasta"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/genomics-001/metadata.csv"
+        }
+    ],
+    "measurementTechnique": "Illumina NovaSeq 6000 whole genome sequencing",
+    "variableMeasured": ["nucleotide sequence", "viral subtype", "collection date", "geographic origin"]
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Dataset: Mosquito Vector Surveillance Network</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 2rem; line-height: 1.6; }
+        .banner { background: #fff3cd; border: 1px solid #ffc107; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+        .banner strong { color: #856404; }
+        h1 { color: #1a5276; border-bottom: 2px solid #1a5276; padding-bottom: 0.5rem; }
+        .metadata { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .metadata dt { font-weight: bold; color: #495057; margin-top: 1rem; }
+        .metadata dd { margin-left: 0; color: #212529; }
+        .badge { display: inline-block; background: #20c997; color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.875rem; margin-right: 0.5rem; }
+        a { color: #0066cc; }
+        .map-placeholder { background: #e9ecef; border: 2px dashed #adb5bd; padding: 3rem; text-align: center; color: #6c757d; border-radius: 8px; margin: 1rem 0; }
+    </style>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/vector-006",
+    "name": "Aedes Mosquito Surveillance Network - Americas Region 2023",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains mosquito trap collection data from a simulated continental surveillance network monitoring Aedes aegypti and Aedes albopictus populations. Includes species counts, geolocation, environmental variables, and pathogen detection results.",
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.99999/example.vector.006"
+    },
+    "url": "https://example.org/datasets/vector-006",
+    "keywords": ["Aedes aegypti", "Aedes albopictus", "mosquito surveillance", "vector control", "Zika", "dengue", "chikungunya", "entomology"],
+    "license": "https://opendatacommons.org/licenses/by/1-0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Vector Surveillance Consortium",
+        "url": "https://example.org/consortia/vector-surveillance"
+    },
+    "contributor": [
+        {
+            "@type": "Organization",
+            "name": "Example Ministry of Health - Brazil"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example CDC Vector-Borne Division"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example University Entomology Department"
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Environmental Health Data Center"
+    },
+    "datePublished": "2024-02-01",
+    "dateModified": "2024-06-15",
+    "temporalCoverage": "2023-01-01/2023-12-31",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "Americas (North, Central, South America, Caribbean)",
+        "geo": {
+            "@type": "GeoShape",
+            "box": "-55.0 -180.0 72.0 -30.0"
+        }
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/vector-006/trap_collections.csv",
+            "description": "Weekly trap collection data"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/geo+json",
+            "contentUrl": "https://example.org/datasets/vector-006/trap_locations.geojson",
+            "description": "Trap site locations"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-netcdf",
+            "contentUrl": "https://example.org/datasets/vector-006/climate_data.nc",
+            "description": "Associated climate variables"
+        }
+    ],
+    "measurementTechnique": ["BG-Sentinel traps", "Gravid traps", "CDC light traps", "RT-PCR for pathogen detection"],
+    "variableMeasured": [
+        "Species count per trap-night",
+        "Female/male ratio",
+        "Pathogen infection rate",
+        "Temperature",
+        "Precipitation",
+        "Humidity"
+    ],
+    "hasPart": [
+        {
+            "@type": "Dataset",
+            "name": "Aedes aegypti subset"
+        },
+        {
+            "@type": "Dataset",
+            "name": "Aedes albopictus subset"
+        },
+        {
+            "@type": "Dataset",
+            "name": "Pathogen detection results"
+        }
+    ],
+    "isAccessibleForFree": true,
+    "conditionsOfAccess": "Open access with attribution required"
+}
+    </script>
+</head>
+<body>
+    <div class="banner">
+        <strong>⚠️ EXAMPLE DATA - NOT REAL</strong><br>
+        This is a fictitious dataset created for demonstration purposes only. All surveillance data, locations, and organizations are fake.
+    </div>
+
+    <h1>Aedes Mosquito Surveillance Network - Americas Region 2023</h1>
+
+    <p>This fictitious dataset contains mosquito trap collection data from a simulated continental surveillance network monitoring <em>Aedes aegypti</em> and <em>Aedes albopictus</em> populations. Includes species counts, geolocation, environmental variables, and pathogen detection results.</p>
+
+    <div class="map-placeholder">
+        [Interactive Map Placeholder]<br>
+        <small>Map showing 450+ surveillance trap locations across the Americas</small>
+    </div>
+
+    <div class="metadata">
+        <dl>
+            <dt>Identifier</dt>
+            <dd>DOI: 10.99999/example.vector.006</dd>
+
+            <dt>Creator</dt>
+            <dd>Example Vector Surveillance Consortium</dd>
+
+            <dt>Contributors</dt>
+            <dd>
+                Example Ministry of Health - Brazil<br>
+                Example CDC Vector-Borne Division<br>
+                Example University Entomology Department
+            </dd>
+
+            <dt>Date Published</dt>
+            <dd>February 1, 2024 (Updated: June 15, 2024)</dd>
+
+            <dt>Temporal Coverage</dt>
+            <dd>January 1, 2023 - December 31, 2023 (weekly collections)</dd>
+
+            <dt>Spatial Coverage</dt>
+            <dd>Americas (North, Central, South America, Caribbean)</dd>
+
+            <dt>License</dt>
+            <dd><a href="https://opendatacommons.org/licenses/by/1-0/">ODC-By 1.0</a></dd>
+
+            <dt>Keywords</dt>
+            <dd>
+                <span class="badge">Aedes aegypti</span>
+                <span class="badge">Aedes albopictus</span>
+                <span class="badge">surveillance</span>
+                <span class="badge">vector control</span>
+                <span class="badge">arbovirus</span>
+            </dd>
+
+            <dt>Collection Methods</dt>
+            <dd>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li>BG-Sentinel traps</li>
+                    <li>Gravid traps</li>
+                    <li>CDC light traps</li>
+                    <li>RT-PCR for pathogen detection</li>
+                </ul>
+            </dd>
+
+            <dt>Variables Measured</dt>
+            <dd>Species count, female/male ratio, pathogen infection rate, temperature, precipitation, humidity</dd>
+
+            <dt>Downloads</dt>
+            <dd>
+                <a href="#">trap_collections.csv</a> (CSV - trap data)<br>
+                <a href="#">trap_locations.geojson</a> (GeoJSON - locations)<br>
+                <a href="#">climate_data.nc</a> (NetCDF - climate variables)
+            </dd>
+
+            <dt>Dataset Components</dt>
+            <dd>
+                <ul style="margin: 0; padding-left: 1.5rem;">
+                    <li><em>Aedes aegypti</em> subset</li>
+                    <li><em>Aedes albopictus</em> subset</li>
+                    <li>Pathogen detection results</li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+
+    <h2>Access Conditions</h2>
+    <p>This dataset is open access. Attribution to the Example Vector Surveillance Consortium is required for any use or publication.</p>
+
+    <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #dee2e6; color: #6c757d; font-size: 0.875rem;">
+        <p>This page contains embedded JSON-LD metadata (view page source to see). Created as a demonstration for the NIAID API Reference Implementation.</p>
+    </footer>
+</body>
+</html>

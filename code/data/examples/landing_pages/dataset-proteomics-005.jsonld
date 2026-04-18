@@ -1,0 +1,85 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/proteomics-005",
+    "name": "HIV-1 Host-Pathogen Protein Interaction Network - Mass Spectrometry Dataset",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains quantitative proteomics data from mass spectrometry analysis of HIV-1 infected CD4+ T cells. Includes protein expression profiles, post-translational modifications, and predicted protein-protein interactions.",
+    "identifier": [
+        {
+            "@type": "PropertyValue",
+            "propertyID": "DOI",
+            "value": "10.99999/example.proteomics.005"
+        },
+        {
+            "@type": "PropertyValue",
+            "propertyID": "PRIDE",
+            "value": "PXD000000"
+        }
+    ],
+    "url": "https://example.org/datasets/proteomics-005",
+    "keywords": ["HIV-1", "proteomics", "mass spectrometry", "host-pathogen interaction", "CD4+ T cells", "protein networks"],
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Example Systems Biology Laboratory",
+        "url": "https://example.org/labs/systems-biology"
+    },
+    "author": [
+        {
+            "@type": "Person",
+            "name": "Jane Doe",
+            "affiliation": "Example University"
+        },
+        {
+            "@type": "Person",
+            "name": "John Smith",
+            "affiliation": "Example Research Institute"
+        }
+    ],
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Proteomics Repository"
+    },
+    "datePublished": "2024-04-15",
+    "version": "1.0.0",
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/proteomics-005/protein_abundances.csv",
+            "description": "Normalized protein abundance values"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/x-mzml",
+            "contentUrl": "https://example.org/datasets/proteomics-005/raw_spectra.mzML",
+            "description": "Raw mass spectrometry data"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/tab-separated-values",
+            "contentUrl": "https://example.org/datasets/proteomics-005/interactions.tsv",
+            "description": "Predicted protein interactions"
+        }
+    ],
+    "measurementTechnique": "LC-MS/MS (Orbitrap Exploris 480)",
+    "variableMeasured": ["Protein abundance (LFQ)", "Phosphorylation sites", "Ubiquitination sites", "Protein-protein interactions"],
+    "about": [
+        {
+            "@type": "DefinedTerm",
+            "termCode": "NCIT:C14219",
+            "name": "HIV-1",
+            "inDefinedTermSet": "NCI Thesaurus"
+        },
+        {
+            "@type": "DefinedTerm",
+            "termCode": "CL:0000624",
+            "name": "CD4-positive, alpha-beta T cell",
+            "inDefinedTermSet": "Cell Ontology"
+        }
+    ],
+    "isBasedOn": {
+        "@type": "ScholarlyArticle",
+        "name": "Example publication describing experimental methods"
+    }
+}

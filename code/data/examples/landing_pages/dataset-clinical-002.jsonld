@@ -1,0 +1,69 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": "https://example.org/datasets/clinical-002",
+    "name": "Phase II Malaria Vaccine Trial - Immunogenicity and Safety Outcomes",
+    "description": "EXAMPLE DATA - NOT REAL. This fictitious dataset contains de-identified clinical outcomes from a simulated Phase II randomized controlled trial evaluating a candidate malaria vaccine. Includes antibody titers, adverse events, and parasitemia data.",
+    "identifier": [
+        {
+            "@type": "PropertyValue",
+            "propertyID": "DOI",
+            "value": "10.99999/example.clinical.002"
+        },
+        {
+            "@type": "PropertyValue",
+            "propertyID": "ClinicalTrials.gov",
+            "value": "NCT00000000"
+        }
+    ],
+    "url": "https://example.org/datasets/clinical-002",
+    "keywords": ["malaria", "vaccine", "clinical trial", "Phase II", "immunogenicity", "Plasmodium falciparum"],
+    "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "creator": [
+        {
+            "@type": "Organization",
+            "name": "Example Vaccine Research Institute",
+            "url": "https://example.org/institutes/vaccine-research"
+        },
+        {
+            "@type": "Organization",
+            "name": "Example Clinical Trials Network",
+            "url": "https://example.org/networks/clinical"
+        }
+    ],
+    "funder": {
+        "@type": "Organization",
+        "name": "Example Global Health Foundation",
+        "url": "https://example.org/foundations/global-health"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Example Clinical Data Repository"
+    },
+    "datePublished": "2024-01-20",
+    "temporalCoverage": "2022-03-01/2023-09-30",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "Sub-Saharan Africa"
+    },
+    "distribution": [
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "text/csv",
+            "contentUrl": "https://example.org/datasets/clinical-002/outcomes.csv",
+            "description": "Primary outcome measures"
+        },
+        {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "https://example.org/datasets/clinical-002/protocol.json",
+            "description": "Study protocol in JSON format"
+        }
+    ],
+    "measurementTechnique": ["ELISA", "Flow cytometry", "Microscopy for parasitemia"],
+    "variableMeasured": ["Anti-CSP IgG titers", "T-cell responses", "Parasitemia", "Adverse events"],
+    "ethicsApproval": {
+        "@type": "CreativeWork",
+        "name": "IRB Approval #FAKE-2022-001"
+    }
+}

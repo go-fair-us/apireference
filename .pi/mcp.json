@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "bioportal_mcp": {
+      "url": "https://bioportal.fastmcp.app/mcp"
+    },
+    "clinicaltrials_mcp": {
+      "url": "https://clinicaltrials.caseyjhand.com/mcp",
+      "directTools": true
+    },
+    "gget_mcp": {
+      "url": "https://gget-mcp.longevity-genie.info/mcp"
+    },
+    "opengenes_mcp": {
+      "url": "https://opengenes-mcp.longevity-genie.info/mcp"
+    },
+    "synergy_age_mcp": {
+      "url": "https://synergy-age-mcp.longevity-genie.info/mcp"
+    },
+    "biocontext_kb_mcp": {
+      "url": "https://biocontext-kb.fastmcp.app/mcp"
+    },
+    "WODB": {
+      "url": "https://frink.apps.renci.org/mcp/proto-okn/mcp",
+      "directTools": true
+    }
+  }
+}
