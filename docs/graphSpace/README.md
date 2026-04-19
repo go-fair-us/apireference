@@ -35,6 +35,8 @@ flowchart TD
 - **Ontology**: Formal classes, properties, and axioms that provide structure and constraints to the Entity Graph where possible.  
 - **Knowledge Graph**: The resulting ontology-aligned, high-confidence structure.
 
+> NOTE: Not shown here, and I likely should, is the curated metadata graph.  The graph that is formed from the vetted and published metadata.  It, too, would have connections to the ontology (or many) and the entity graph.  It along with the ontolgies is likely your human touched ground truth.
+
 In this model, the Assertion Graph feeds into the Entity Graph through entity resolution and relation normalization. The Entity Graph is then aligned with the Ontology, while maintaining traceable links back to the Lexical Graph for provenance.
 
 This approach also maps well to the Blueprint architecture. If the Scripps work leverages existing ontology or vocabulary elements when constructing the Entity Graph, it would represent good practice and improve consistency, interoperability, and reasoning capability across the system.
