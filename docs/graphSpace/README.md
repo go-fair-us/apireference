@@ -39,6 +39,13 @@ flowchart TD
 
 In this model, the Assertion Graph feeds into the Entity Graph through entity resolution and relation normalization. The Entity Graph is then aligned with the Ontology, while maintaining traceable links back to the Lexical Graph for provenance.
 
-This approach also maps well to the Blueprint architecture. If the Scripps work leverages existing ontology or vocabulary elements when constructing the Entity Graph, it would represent good practice and improve consistency, interoperability, and reasoning capability across the system.
+This approach also maps well to the Blueprint architecture. If the Scripps work leverages existing ontology or vocabulary elements when constructing the Entity Graph, it would represent good practice and improve consistency, interoperability, and reasoning capability across the system.  Additionally, the use of a rich and well-governed PID approach would further improve the growth of connections across people, or organizations and concepts in such a graph
 
 > Note: Recent comments in the slack thread about existing metadata approaches to this assertion type are worth considering.  
+
+
+
+## References
+
+* https://collaboratory.semanticscience.org/
+* https://api.collaboratory.semanticscience.org/docs
