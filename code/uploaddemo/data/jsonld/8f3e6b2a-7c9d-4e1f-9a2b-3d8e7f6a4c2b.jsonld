@@ -1,0 +1,48 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "@id": "urn:uuid:8f3e6b2a-7c9d-4e1f-9a2b-3d8e7f6a4c2b",
+  "name": "Biomasa",
+  "description": "Clinical survey dataset containing geospatial observations. The dataset includes fields for OBJECTID, survey identifier, code, decapoda (biomass or clinical measurement related to Decapoda), and geographic coordinates (longitude and latitude).",
+  "keywords": [
+    {
+      "@type": "DefinedTerm",
+      "name": "clinical survey",
+      "inDefinedTermSet": "https://www.ebi.ac.uk/ols4/ontologies/NCIT",
+      "url": "http://purl.obolibrary.org/obo/NCIT_C142470"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "biomass",
+      "inDefinedTermSet": "https://www.ebi.ac.uk/ols4/ontologies/ENVO",
+      "url": "http://purl.obolibrary.org/obo/ENVO_00002034"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Decapoda",
+      "inDefinedTermSet": "https://www.ebi.ac.uk/ols4/ontologies/NCBITaxon",
+      "url": "http://purl.obolibrary.org/obo/NCBITaxon_6681"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "geospatial",
+      "inDefinedTermSet": "https://www.ebi.ac.uk/ols4/ontologies/OGI",
+      "url": "http://purl.obolibrary.org/obo/OGI_0000001"
+    }
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "-2.25 -79.92 -2.18 -79.85"
+    }
+  },
+  "measurementTechnique": "Clinical survey with geospatial recording",
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "decapoda",
+      "description": "Decapoda biomass or clinical measurement"
+    }
+  ]
+}

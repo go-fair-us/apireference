@@ -1,0 +1,16 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "@id": "urn:uuid:8f2e4c1a-9b3d-4e7f-8a2c-1d6b9e4f7a3c",
+  "name": "Example Dataset",
+  "description": "This is a sample dataset used for demonstration purposes in the conversation.",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Biomasa_Data.csv",
+      "contentUrl": "file:///home/fils/src/Projects/NIAID/apireference/code/uploaddemo/data/uploads/8f2e4c1a-9b3d-4e7f-8a2c-1d6b9e4f7a3c/Biomasa_Data.csv",
+      "encodingFormat": "text/csv",
+      "contentSize": "13094 bytes"
+    }
+  ]
+}

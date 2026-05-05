@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Dataset",
+  "@id": null,
+  "name": null,
+  "description": null,
+  "url": null,
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": null,
+    "value": null,
+    "url": null
+  },
+  "keywords": [],
+  "creator": [],
+  "license": null,
+  "dateCreated": null,
+  "datePublished": null,
+  "dateModified": null,
+  "distribution": [],
+  "spatialCoverage": null,
+  "temporalCoverage": null,
+  "measurementTechnique": [],
+  "about": [],
+  "citation": [],
+  "funder": []
+}

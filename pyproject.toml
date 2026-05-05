@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "chainlit>=2.11.1",
     "faker>=40.12.0",
     "fastapi>=0.115.0",
     "fastparquet>=2025.12.0",
@@ -20,6 +21,7 @@ dependencies = [
     "matplotlib>=3.10.8",
     "nest-asyncio>=1.6.0",
     "networkx>=3.6.1",
+    "openai>=2.33.0",
     "pandas>=3.0.1",
     "playwright>=1.58.0",
     "pyarrow>=23.0.1",
