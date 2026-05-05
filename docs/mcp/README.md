@@ -94,6 +94,53 @@ MCP supports first-class bidirectional flows (e.g., progress updates, clarificat
 * You have limited resources and want to avoid any extra maintenance or security concerns.
 * AI usage is experimental or secondary, in this case a solid OpenAPI/Swagger spec + CLI (that agents can call via shell) may be enough.
 
+### Don't wrap your API in MCP
+
+Why?
+
+1. It Forces the LLM to Become a Fragile "Systems Integrator"
+Traditional APIs are designed for humans or well-scoped machines that already understand the domain, field meanings, pagination quirks, auth flows, and multi-step workflows. A direct MCP wrapper exposes that same low-level surface.
+The LLM then has to:
+
+Figure out which endpoints to call and in what order.
+Resolve ambiguities (e.g., "John" → user ID lookup).
+Handle pagination, error codes, rate limits, and state.
+Orchestrate multiple calls for what should be a single business intent.
+
+This leads to token waste, context pollution, hallucinations (inventing non-existent endpoints), brittle chains that break on minor API changes, and unpredictable failures. MCP was meant to remove this burden, not replicate it in a new protocol.
+2. You Get Zero Semantic or Intent-Based Abstraction
+MCP's real power comes from curated, high-level tools aligned with user/agent intents (e.g., create_and_assign_ticket, summarize_project_status, find_product_by_keyword), not raw endpoints like POST /api/v1/tickets or GET /api/v1/users.
+A thin wrapper:
+
+Passes through cryptic names, numeric status codes without meaning, and unhelpful errors ("invalid_params" or "404").
+Lacks context, units, provenance, or relationships that agents need to reason effectively.
+Exposes the full (often bloated) API surface, overwhelming the model's context window.
+
+Enterprise APIs in particular were built assuming the caller "knows what stat_cd: 3 means." Agents don't—and can't reliably infer it. The result is an MCP server that grants access but not utility.
+3. It Adds Overhead Without Adding Intelligence
+MCP introduces its own costs: extra latency (often multiple backend calls per MCP tool invocation), higher token usage from reasoning loops, and a larger attack surface (tool description poisoning, prompt injection via exposed capabilities).
+A naive wrapper delivers none of MCP's intended benefits:
+
+No dynamic, high-quality capability discovery tailored for LLMs.
+No built-in intelligence (name resolution, workflow orchestration, actionable error recovery, or natural-language-friendly responses).
+No reduction in the agent's cognitive load.
+
+You're essentially paying the MCP tax for a protocol translation layer that changes nothing meaningful for the AI consumer.
+4. It Creates Long-Term Maintenance and Architectural Debt
+
+Every backend API change (schema, endpoint, behavior) requires corresponding MCP updates → drift and breakage.
+Security exposure increases because you're making more of your system callable by potentially untrusted agents.
+It locks you into a "MCP as thin shim" mindset instead of evolving toward agent-native design (intent-based tools, semantic data layers, etc.).
+
+This is a "MCP server trap" or an "antipattern": it looks like progress on paper ("now our API works with Claude!"), but it delivers a connected but still unusable integration for real agent workflows.
+
+For real deployments, ie MCP first approaches:
+
+* Start from the agent's perspective: Define tools based on user/agent stories and desired outcomes, not your existing endpoints.
+* Aggressively curate and transform: Bundle operations, simplify/rename parameters, hide irrelevant ones, add intelligent defaults, and enrich descriptions with examples and guardrails.
+* Add intelligence in the MCP layer: Handle entity resolution, workflow orchestration, semantic translation, and rich, actionable responses (including next-step guidance and recovery instructions).
+* Design for minimalism: Fewer, higher-value tools beat exposing everything. Focus on verbs and business capabilities.
+* Consider deeper changes: Improve underlying data (semantic clarity, consistent IDs, rich metadata) so the MCP tools have something good to expose.
 
 ## Security issues 
 

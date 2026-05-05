@@ -1,5 +1,21 @@
 # MCP
 
+## MCP Protocol over SPARQL endpoints
+
+Ref:  https://www.sparna.fr/en/posts/mcp-protocol-over-sparql-endpoints/
+
+For effective use of SPARQL via MCP;
+
+* always generate and expose a SHACL profile (ideally created automatically with tools like SHACL Play) as the central schema reference so AI agents can understand classes, properties, and relationships without iterative discovery; 
+* pair this with a dedicated named-entity reconciliation service—preferably powered by a full-text search index rather than plain SPARQL—to map human-readable labels to URIs reliably (“things, not strings”), and expose that service through an OpenRefine-compatible API for maximum interoperability. 
+
+Filter the SHACL profile to expose only the necessary subset of classes and predicates, annotate it with sh:agentInstruction (SHACL 1.2) to guide label selection and query patterns, and ensure the three MCP tools (SPARQL executor, SHACL provider, and reconciler) are clearly described so the agent autonomously follows the optimal workflow of reading the schema, reconciling entities, constructing a precise SPARQL query, and returning human-readable results. 
+
+This approach delivers structured, efficient GraphRAG capabilities while avoiding the limitations of raw SPARQL endpoints.
+
+When testing this it might be nice to use an embedded graph with SPARQL support like
+PyOxigraph or [Grafeo](https://grafeo.dev/)
+
 ## Bun cli tool
 
 Bun based CLI with mcp-cli (see https://github.com/philschmid/mcp-cli)
